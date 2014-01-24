@@ -1,0 +1,48 @@
+# Local configuration for meta-srtg-systemd images
+# Yocto Project 1.5.1 Poky distribution 10.0.1, [dora] branch
+# We use systemd-udev, but still using sysvinit for our init-manager 
+
+IMAGE_FSTYPES_forcevariable = "tar.xz"
+
+# Important to override DISTRO_FEATURES or by default x11 and all its dependencies
+# will get built whether or not you use it in an image.
+DISTRO_FEATURES = "bluetooth ext2 keyboard systemd usbhost wifi ${DISTRO_FEATURES_LIBC}"
+
+PREFERRED_PROVIDER_udev = "systemd"
+
+#VIRTUAL-RUNTIME_init_manager = "systemd"
+#DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+
+# Additional distro features you might want to add:
+# alsa, bluetooth, irda, nfc, nfs, pci, usbgadget, vfat, x11, zeroconf
+
+# override the mix in the meta-gumstix/conf/machine configuration files
+MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
+
+BB_NUMBER_THREADS = "4"
+PARALLEL_MAKE = "-j 4"
+
+MACHINE = "duovero"
+PREFERRED_VERSION_u-boot = "2012.10"
+UBOOT_MACHINE_forcevariable = "omap4_duovero_config"
+
+DL_DIR = "/oe-sources"
+
+SSTATE_DIR = "/oe22/sstate-cache"
+
+TMPDIR = "/oe22/tmp-poky-dora-build"
+
+DISTRO = "poky"
+
+PACKAGE_CLASSES = "package_ipk"
+
+SDKMACHINE = "x86_64"
+
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
+
+USER_CLASSES = "image-mklibs image-prelink"
+
+PATCHRESOLVE = "noop"
+
+CONF_VERSION = "1"
+

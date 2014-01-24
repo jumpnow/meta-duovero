@@ -1,0 +1,13 @@
+diff --git aircrack-ng-1.2-beta2/src/Makefile-orig aircrack-ng-1.2-beta2/src/Makefile
+index b60e2de..3839121 100644
+--- aircrack-ng-1.2-beta2/src/Makefile-orig
++++ aircrack-ng-1.2-beta2/src/Makefile
+@@ -96,7 +96,7 @@ endif
+ 
+ 
+ ifeq ($(subst TRUE,true,$(filter TRUE true,$(sqlite) $(SQLITE))),true)
+-	LIBSQL		= -L/usr/local/lib -lsqlite3
++	LIBSQL		= -lsqlite3
+ else
+ 	LIBSQL		=
+ endif

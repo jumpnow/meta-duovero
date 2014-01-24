@@ -1,0 +1,21 @@
+# LAYER_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+LCONF_VERSION = "6"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  /home/scott/poky-dora/meta \
+  /home/scott/poky-dora/meta-yocto \
+  /home/scott/poky-dora/meta-openembedded/meta-oe \
+  /home/scott/poky-dora/meta-openembedded/meta-networking \
+  /home/scott/poky-dora/meta-gumstix \
+  /home/scott/srtg-dora/meta-srtg-systemd \
+  "
+
+BBLAYERS_NON_REMOVABLE ?= " \
+  /home/scott/poky-dora/meta \
+  /home/scott/poky-dora/meta-yocto \
+  "
+
