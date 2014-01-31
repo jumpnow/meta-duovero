@@ -1,19 +1,19 @@
 This layer depends on:
 
         URI: git://git.yoctoproject.org/poky.git
-        branch: dylan
+        branch: dora
         revision: HEAD
-        commit: 57e6d53 
+        commit: bee7e37 
 
         URI: git://git.openembedded.org/meta-openembedded
-        branch: dylan
+        branch: dora
         revision: HEAD
-        commit: 4475420 
+        commit: eb4563b 
 
         URI: git://github.com/gumstix/meta-gumstix.git
-        branch: dylan
+        branch: dora
         revision: HEAD
-        commit: f104087 
+        commit: 49e2bfb  
 
-        meta-srtg layer maintainer: Scott Ellis <scott@pansenti.com>
+        meta-srtg-systemd layer maintainer: Scott Ellis <scott@pansenti.com>
 
