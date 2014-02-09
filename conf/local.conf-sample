@@ -1,6 +1,10 @@
-# Local configuration for meta-srtg-systemd images
+# Local configuration for meta-duovero images
 # Yocto Project 1.5.1 Poky distribution 10.0.1, [dora] branch
-# We use systemd-udev, but still using sysvinit for our init-manager 
+# This is a sysvinit system
+
+LICENSE_FLAGS_WHITELIST = "commercial"
+
+#BBMASK = "meta-duovero/recipes-bsp"
 
 IMAGE_FSTYPES_forcevariable = "tar.xz"
 
@@ -8,13 +12,7 @@ IMAGE_FSTYPES_forcevariable = "tar.xz"
 # will get built whether or not you use it in an image.
 DISTRO_FEATURES = "bluetooth ext2 keyboard systemd usbhost wifi ${DISTRO_FEATURES_LIBC}"
 
-PREFERRED_PROVIDER_udev = "systemd"
-
-#VIRTUAL-RUNTIME_init_manager = "systemd"
-#DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
-
-# Additional distro features you might want to add:
-# alsa, bluetooth, irda, nfc, nfs, pci, usbgadget, vfat, x11, zeroconf
+PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 # override the mix in the meta-gumstix/conf/machine configuration files
 MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
@@ -22,15 +20,21 @@ MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
+# duovero radio firmware works better with this version of udev
+PREFERRED_PROVIDER_udev = "systemd"
+
+# the default, but make sure we still have a sysvinit system
+VIRTUAL_RUNTIME_init_manager = "sysvinit"
+
 MACHINE = "duovero"
 PREFERRED_VERSION_u-boot = "2012.10"
 UBOOT_MACHINE_forcevariable = "omap4_duovero_config"
 
 DL_DIR = "/oe-sources"
 
-SSTATE_DIR = "/oe22/sstate-cache"
+SSTATE_DIR = "/oe26/sstate-cache"
 
-TMPDIR = "/oe22/tmp-poky-dora-build"
+TMPDIR = "/oe26/tmp-poky-dora-build"
 
 DISTRO = "poky"
 

@@ -11,7 +11,7 @@ BBLAYERS ?= " \
   /home/scott/poky-dora/meta-openembedded/meta-oe \
   /home/scott/poky-dora/meta-openembedded/meta-networking \
   /home/scott/poky-dora/meta-gumstix \
-  /home/scott/srtg-dora/meta-srtg-systemd \
+  /home/scott/duovero/meta-duovero \
   "
 
 BBLAYERS_NON_REMOVABLE ?= " \
