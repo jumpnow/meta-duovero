@@ -37,8 +37,8 @@ fi
 echo -e "HOSTNAME: $TARGET_HOSTNAME\n"
 
 
-if [ ! -f "srtg-${IMAGE}-image-${MACHINE}.tar.xz" ]; then
-        echo -e "File not found: srtg-${IMAGE}-image-${MACHINE}.tar.xz\n"
+if [ ! -f "duovero-${IMAGE}-image-${MACHINE}.tar.xz" ]; then
+        echo -e "File not found: duovero-${IMAGE}-image-${MACHINE}.tar.xz\n"
 
 		if [ ! -z "$OETMP" ]; then
 			cd $OLDPWD
@@ -56,8 +56,8 @@ if [ -b $DEV ]; then
 	echo "Mounting $DEV"
 	sudo mount $DEV /media/card
 
-	echo "Extracting srtg-${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
-	sudo tar -C /media/card -xJf srtg-${IMAGE}-image-${MACHINE}.tar.xz
+	echo "Extracting duovero-${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
+	sudo tar -C /media/card -xJf duovero-${IMAGE}-image-${MACHINE}.tar.xz
 
 	echo "Writing hostname to /etc/hostname"
 	export TARGET_HOSTNAME
