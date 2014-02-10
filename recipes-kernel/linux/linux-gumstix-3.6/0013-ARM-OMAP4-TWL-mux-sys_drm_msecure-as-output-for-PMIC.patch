@@ -1,6 +1,6 @@
-From ae0317797f56a9ab6dbdf858fa5a354e34a10e14 Mon Sep 17 00:00:00 2001
+From 1f26f1445b7326bc33d578715c5e9a9c8930e998 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@pansenti.com>
-Date: Sun, 9 Feb 2014 06:14:49 -0500
+Date: Mon, 10 Feb 2014 10:42:31 -0500
 Subject: [PATCH] ARM: OMAP4: TWL: mux sys_drm_msecure as output for PMIC
 
 On OMAP4 boards using the TWL6030 PMIC, the sys_drm_msecure is
@@ -30,12 +30,12 @@ index db5ff66..d272034 100644
 +++ b/arch/arm/mach-omap2/twl-common.c
 @@ -82,6 +82,7 @@ void __init omap4_pmic_init(const char *pmic_type,
  {
-        /* PMIC part*/
-        omap_mux_init_signal("sys_nirq1", OMAP_PIN_INPUT_PULLUP | OMAP_PIN_OFF_WAKEUPENABLE);
-+       omap_mux_init_signal("fref_clk0_out.sys_drm_msecure", OMAP_PIN_OUTPUT);
-        strncpy(omap4_i2c1_board_info[0].type, pmic_type,
-                sizeof(omap4_i2c1_board_info[0].type));
-        omap4_i2c1_board_info[0].irq = OMAP44XX_IRQ_SYS_1N;
+ 	/* PMIC part*/
+ 	omap_mux_init_signal("sys_nirq1", OMAP_PIN_INPUT_PULLUP | OMAP_PIN_OFF_WAKEUPENABLE);
++	omap_mux_init_signal("fref_clk0_out.sys_drm_msecure", OMAP_PIN_OUTPUT);
+ 	strncpy(omap4_i2c1_board_info[0].type, pmic_type,
+ 		sizeof(omap4_i2c1_board_info[0].type));
+ 	omap4_i2c1_board_info[0].irq = OMAP44XX_IRQ_SYS_1N;
 -- 
 1.8.1.2
 
