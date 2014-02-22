@@ -1,4 +1,5 @@
-DESCRIPTION = "A console development image with some C/C++ dev tools"
+SUMMARY = "A console development image with some C/C++ dev tools"
+HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
 IMAGE_FEATURES += "package-management"

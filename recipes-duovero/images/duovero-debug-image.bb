@@ -1,4 +1,5 @@
 DESCRIPTION = "A console kernel development image, no modules"
+HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
 IMAGE_FEATURES += "package-management"
