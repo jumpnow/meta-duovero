@@ -6,16 +6,15 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  /home/scott/poky-dora/meta \
-  /home/scott/poky-dora/meta-yocto \
-  /home/scott/poky-dora/meta-openembedded/meta-oe \
-  /home/scott/poky-dora/meta-openembedded/meta-networking \
-  /home/scott/poky-dora/meta-gumstix \
-  /home/scott/duovero/meta-duovero \
+  ${HOME}/poky-dora/meta \
+  ${HOME}/poky-dora/meta-yocto \
+  ${HOME}/poky-dora/meta-openembedded/meta-oe \
+  ${HOME}/poky-dora/meta-openembedded/meta-networking \
+  ${HOME}/poky-dora/meta-gumstix \
+  ${HOME}/duovero/meta-duovero \
   "
 
 BBLAYERS_NON_REMOVABLE ?= " \
-  /home/scott/poky-dora/meta \
-  /home/scott/poky-dora/meta-yocto \
+  ${HOME}/poky-dora/meta \
+  ${HOME}/poky-dora/meta-yocto \
   "
-
