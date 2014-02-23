@@ -28,7 +28,7 @@ index 9277d94..2a9d467 100644
 +	int ret;
 +	u8 data;
 +
-+	ret = twl_i2c_read_u8(TWL6030_MODULE_ID0, &data, REG_BBSPOR_CFG);
++	ret = twl_i2c_read_u8(TWL6030_MODULE_ID1, &data, REG_BBSPOR_CFG);
 +	if (ret < 0) {
 +		pr_err("twl_rtc: read bbspor_cfg failed: %d\n", ret);
 +		return ret;
@@ -41,7 +41,7 @@ index 9277d94..2a9d467 100644
 +	data &= ~(BB_SEL_1 | BB_SEL_0);
 +	data |= BB_CHG_EN;
 +
-+	ret = twl_i2c_write_u8(TWL6030_MODULE_ID0, data, REG_BBSPOR_CFG);
++	ret = twl_i2c_write_u8(TWL6030_MODULE_ID1, data, REG_BBSPOR_CFG);
 +	if (ret < 0)
 +		pr_err("twl_rtc: write bbspor_cfg failed: %d\n", ret);
 +	else
