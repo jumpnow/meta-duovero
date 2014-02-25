@@ -15,5 +15,5 @@ This layer depends on:
         revision: HEAD
         commit: 9230aa4  
 
-        meta-overo layer maintainer: Scott Ellis <scott@jumpnowtek.com>
+        meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
