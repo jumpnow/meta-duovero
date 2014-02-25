@@ -2,13 +2,11 @@ SUMMARY = "A development image with nginx webserver"
 HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
-require duovero-console-image.bb
-
-PR = "0"
+require console-image.bb
 
 IMAGE_INSTALL += " \
     nginx \
  "
 
-export IMAGE_BASENAME = "duovero-web-image"
+export IMAGE_BASENAME = "web-image"
 

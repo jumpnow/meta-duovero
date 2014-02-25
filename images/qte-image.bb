@@ -2,9 +2,7 @@ SUMMARY = "A development image with Qt embedded and some Syntro apps"
 HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
-require duovero-console-image.bb
-
-PR = "0"
+require console-image.bb
 
 QT_TOOLS = " \
     qt4-embedded-dev\
@@ -23,5 +21,5 @@ IMAGE_INSTALL += " \
     ${SYNTRO} \
  "
 
-export IMAGE_BASENAME = "duovero-qte-image"
+export IMAGE_BASENAME = "qte-image"
 

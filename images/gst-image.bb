@@ -2,9 +2,7 @@ SUMMARY = "A development image with gstreamer1.0"
 HOMEPAGE = "http://www.jumpnowtek.com"
 LICENSE = "MIT"
 
-require duovero-qte-image.bb
-
-PR = "0"
+require qte-image.bb
 
 GST_TOOLS = " \
     gstreamer1.0 \
@@ -20,5 +18,5 @@ IMAGE_INSTALL += " \
     ${GST_TOOLS} \
  "
 
-export IMAGE_BASENAME = "duovero-gst-image"
+export IMAGE_BASENAME = "gst-image"
 

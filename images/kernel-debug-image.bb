@@ -72,5 +72,5 @@ ROOTFS_POSTPROCESS_COMMAND += " \
     disable_bootlogd ; \
  "
 
-export IMAGE_BASENAME = "duovero-debug-image"
+export IMAGE_BASENAME = "kernel-debug-image"
 
