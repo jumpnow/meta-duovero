@@ -14,21 +14,18 @@ CORE_OS = " \
     tzdata \
  "
 
-# Custom kernel modules built out of tree
-KERNEL_MODULES_OOT = ""
-
 KERNEL_EXTRA_INSTALL = " \
     kernel-modules \
-    ${KERNEL_MODULES_OOT} \
  "
 
 WIFI_SUPPORT = " \
     dhcp-server \
     dhcp-server-config \
     hostap-daemon \
+    iptables \
+    iw \
     linux-firmware-sd8787 \
     wpa-supplicant \
-    iw \
  "
 
 DEV_SDK_INSTALL = " \
