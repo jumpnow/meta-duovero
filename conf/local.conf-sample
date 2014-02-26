@@ -26,8 +26,6 @@ PREFERRED_PROVIDER_udev = "systemd"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE = "duovero"
-PREFERRED_VERSION_u-boot = "2012.10"
-UBOOT_MACHINE_forcevariable = "omap4_duovero_config"
 
 # DL_DIR = "/oe-sources"
 
