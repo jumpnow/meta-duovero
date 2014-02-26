@@ -1,0 +1,72 @@
+diff --git git/include/configs/omap4_common.h-orig git/include/configs/omap4_common.h
+index b5485c0..1ea4973 100644
+--- git/include/configs/omap4_common.h-orig
++++ git/include/configs/omap4_common.h
+@@ -133,13 +133,6 @@
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+ 	"loadaddr=0x82000000\0" \
+ 	"console=ttyO2,115200n8\0" \
+-	"fdt_high=0xffffffff\0" \
+-	"fdtaddr=0x80f80000\0" \
+-	"fdtfile=undefined\0" \
+-	"bootpart=0:2\0" \
+-	"bootdir=/boot\0" \
+-	"bootfile=zImage\0" \
+-	"usbtty=cdc_acm\0" \
+ 	"vram=16M\0" \
+ 	"mmcdev=0\0" \
+ 	"mmcroot=/dev/mmcblk0p2 rw\0" \
+@@ -154,43 +147,28 @@
+ 	"loadbootenv=fatload mmc ${mmcdev} ${loadaddr} uEnv.txt\0" \
+ 	"importbootenv=echo Importing environment from mmc${mmcdev} ...; " \
+ 		"env import -t ${loadaddr} ${filesize}\0" \
+-	"loadimage=load mmc ${bootpart} ${loadaddr} ${bootdir}/${bootfile}\0" \
++	"loaduimage=load mmc ${mmcdev} ${loadaddr} uImage\0" \
+ 	"mmcboot=echo Booting from mmc${mmcdev} ...; " \
+ 		"run mmcargs; " \
+-		"bootz ${loadaddr} - ${fdtaddr}\0" \
+-	"findfdt="\
+-		"if test $board_name = sdp4430; then " \
+-			"setenv fdtfile omap4-sdp.dtb; fi; " \
+-		"if test $board_name = panda; then " \
+-			"setenv fdtfile omap4-panda.dtb; fi;" \
+-		"if test $board_name = panda-a4; then " \
+-			"setenv fdtfile omap4-panda-a4.dtb; fi;" \
+-		"if test $board_name = panda-es; then " \
+-			"setenv fdtfile omap4-panda-es.dtb; fi;" \
+-		"if test $board_name = duovero; then " \
+-			"setenv fdtfile omap4-duovero.dtb; fi;" \
+-		"if test $fdtfile = undefined; then " \
+-			"echo WARNING: Could not determine device tree to use; fi; \0" \
+-	"loadfdt=load mmc ${bootpart} ${fdtaddr} ${bootdir}/${fdtfile}\0" \
++		"bootm ${loadaddr}\0" \
+ 
+ #define CONFIG_BOOTCOMMAND \
+-	"run findfdt; " \
+-	"mmc dev ${mmcdev}; if mmc rescan; then " \
++	"mmc dev ${mmcdev}; " \
++	"if mmc rescan; then " \
+ 		"echo SD/MMC found on device ${mmcdev};" \
+ 		"if run loadbootscript; then " \
+ 			"run bootscript; " \
+ 		"else " \
+ 			"if run loadbootenv; then " \
+ 				"run importbootenv; " \
++				"if test -n ${uenvcmd}; then " \
++					"echo Running uenvcmd ...;" \
++					"run uenvcmd;" \
++				"fi;" \
+ 			"fi;" \
+-			"if test -n ${uenvcmd}; then " \
+-				"echo Running uenvcmd ...;" \
+-				"run uenvcmd;" \
++			"if run loaduimage; then " \
++				"run mmcboot; " \
+ 			"fi;" \
+-		"fi;" \
+-		"if run loadimage; then " \
+-			"run loadfdt;" \
+-			"run mmcboot; " \
+ 		"fi; " \
+ 	"fi"
+ 
