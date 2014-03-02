@@ -50,8 +50,15 @@ DEV_SDK_INSTALL = " \
     pkgconfig \
  "
 
+DEV_EXTRAS = " \
+    avahi-daemon \
+    ntp \
+    ntp-tickadj \
+ "
+
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
+    devmem2 \
     ethtool \
     findutils \
     i2c-tools \
@@ -71,6 +78,7 @@ EXTRA_TOOLS_INSTALL = " \
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
+    ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
     ${WIFI_SUPPORT} \
