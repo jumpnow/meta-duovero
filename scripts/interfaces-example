@@ -1,4 +1,4 @@
-# Copy this file to your $OETMP/deploy/images directory and 
+# Copy this file to your $OETMP/deploy/images/duovero directory and 
 # rename it 'interfaces'. 
 # Then edit it to suit your configuration.
 # The script copy_rootfs.sh will copy it to the SD card.
@@ -19,15 +19,15 @@ iface eth0 inet dhcp
 #	gateway 192.168.10.1
 
 ### wireless, dhcp
-#auto wlan0
-#iface wlan0 inet dhcp
-#     pre-up wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -B
+#auto mlan0
+#iface mlan0 inet dhcp
+#     pre-up wpa_supplicant -Dwext -imlan0 -c/etc/wpa_supplicant.conf -B
 #     down killall wpa_supplicant
 
 ### wireless, static
-#auto wlan0
-#iface wlan0 inet static 
-#     pre-up wpa_supplicant -Dwext -iwlan0 -c/etc/wpa_supplicant.conf -B
+#auto mlan0
+#iface mlan0 inet static 
+#     pre-up wpa_supplicant -Dwext -imlan0 -c/etc/wpa_supplicant.conf -B
 #     address 192.168.10.33
 #     netmask 255.255.255.0
 #     gateway 192.168.10.1

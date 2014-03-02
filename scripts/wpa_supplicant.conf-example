@@ -1,4 +1,4 @@
-# Copy this to your $OETMP/deploy/images directory and 
+# Copy this to your $OETMP/deploy/images/duovero directory and 
 # rename it 'wpa_supplicant.conf'. 
 # Then edit it to suit your configuration.
 # The script copy_rootfs.sh will copy it to the SD card.
