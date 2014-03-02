@@ -4,9 +4,12 @@ LICENSE = "MIT"
 
 require console-image.bb
 
+PR = "0"
+
 QT_TOOLS = " \
-    qt4-embedded-dev\
     qt4-embedded \
+    qt4-embedded-dev\
+    qt4-embedded-plugin-mousedriver-tslib \
  "
 
 SYNTRO = " \
@@ -19,6 +22,7 @@ SYNTRO = " \
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
     ${SYNTRO} \
+    psplash \
  "
 
 export IMAGE_BASENAME = "qte-image"
