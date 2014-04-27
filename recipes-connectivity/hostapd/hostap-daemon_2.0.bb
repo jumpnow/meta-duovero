@@ -8,13 +8,15 @@ DESCRIPTION = "User space daemon for extended IEEE 802.11 management"
 inherit update-rc.d
 INITSCRIPT_NAME = "hostapd"
 
-PR = "r0"
+PR = "r1"
 
-SRCREV = "a06b1070d8902460a9c61a3e13af577327fce6b3"
+# commit from 2014-04-24
+SRCREV = "3cf48c4f2e2d558130253457fea02ef4047cf8e1"
 
 SRC_URI = " \
     git://w1.fi/hostap.git \
-    file://0001-Revert-a6cc060-breaks-Duovero-with-kernel-3.6.patch \
+    file://0001-remove-absolute-include-path-for-libnl3.patch \
+    file://0002-revert-a6cc060-breaks-duovero.patch \
     file://duovero-defconfig \
     file://duovero-hostapd.conf \
     file://init \
