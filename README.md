@@ -1,14 +1,14 @@
 This layer depends on:
 
         URI: git://git.yoctoproject.org/poky.git
-        branch: dora
+        branch: daisy
         revision: HEAD
-        commit: 0a6f0db 
+        commit: b2f045c 
 
         URI: git://git.openembedded.org/meta-openembedded
-        branch: dora
+        branch: daisy
         revision: HEAD
-        commit: ee17367
+        commit: 9ee63ed 
 
         meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 

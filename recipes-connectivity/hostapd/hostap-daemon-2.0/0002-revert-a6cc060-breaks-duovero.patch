@@ -1,17 +1,17 @@
-From 151460d4338f96e81d1fb8d4d5bb4fabc11029f9 Mon Sep 17 00:00:00 2001
+From 0b8be7d3290b0a9341d1851cdc2b1fa6e8fd9d74 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
-Date: Sat, 26 Apr 2014 16:08:40 -0400
+Date: Mon, 18 Aug 2014 08:41:05 -0400
 Subject: [PATCH] revert a6cc060 breaks duovero
 
 ---
  src/drivers/driver_nl80211.c | 4 ----
  1 file changed, 4 deletions(-)
 
-diff --git git/src/drivers/driver_nl80211.c git/src/drivers/driver_nl80211.c
-index 1300703..ef94f24 100644
---- git/src/drivers/driver_nl80211.c
-+++ git/src/drivers/driver_nl80211.c
-@@ -8184,10 +8184,6 @@ static int nl80211_setup_ap(struct i802_bss *bss)
+diff --git a/src/drivers/driver_nl80211.c b/src/drivers/driver_nl80211.c
+index 8ebf7d9..894908f 100644
+--- a/src/drivers/driver_nl80211.c
++++ b/src/drivers/driver_nl80211.c
+@@ -8336,10 +8336,6 @@ static int nl80211_setup_ap(struct i802_bss *bss)
  		if (nl80211_mgmt_subscribe_ap(bss))
  			return -1;
  
@@ -23,5 +23,5 @@ index 1300703..ef94f24 100644
  	    nl80211_create_monitor_interface(drv) &&
  	    !drv->device_ap_sme)
 -- 
-1.8.3.2
+1.9.1
 

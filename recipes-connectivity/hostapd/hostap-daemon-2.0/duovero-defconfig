@@ -145,7 +145,7 @@ CONFIG_IPV6=n
 #CONFIG_DEBUG_FILE=y
 
 # Remove support for RADIUS accounting
-#CONFIG_NO_ACCOUNTING=y
+CONFIG_NO_ACCOUNTING=y
 
 # Remove support for RADIUS
 #CONFIG_NO_RADIUS=y

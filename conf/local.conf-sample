@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 1.5.1 Poky distribution 10.0.1, [dora] branch
+# Yocto Project 1.6.1 Poky distribution 11.0.1, [dora] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -7,12 +7,12 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 # Important to override DISTRO_FEATURES or by default x11 and all its dependencies
 # will get built whether or not you use it in an image.
 DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
-BB_NUMBER_THREADS = "4"
-PARALLEL_MAKE = "-j 4"
+BB_NUMBER_THREADS = "8"
+PARALLEL_MAKE = "-j 8"
 
 # firmware loading is more reliable with this udev
 PREFERRED_PROVIDER_udev = "systemd"
@@ -22,11 +22,11 @@ VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE = "duovero"
 
-# DL_DIR = "/oe-sources"
+#DL_DIR = "/oe-sources"
 
-# SSTATE_DIR = "/oe9/sstate-cache"
+#SSTATE_DIR = "/oe9/daisy-duovero/sstate-cache"
 
-# TMPDIR = "/oe9/tmp-poky-dora-build"
+#TMPDIR = "/oe9/daisy-duovero/tmp-poky-daisy-build"
 
 DISTRO = "poky"
 
