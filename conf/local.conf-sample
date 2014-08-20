@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 1.6.1 Poky distribution 11.0.1, [dora] branch
+# Yocto Project 1.6.1 Poky distribution 11.0.1, [daisy] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -7,6 +7,7 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 # Important to override DISTRO_FEATURES or by default x11 and all its dependencies
 # will get built whether or not you use it in an image.
 DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
+# remove opengl so opencv builds cleanly, remove pulseaudio since it brings in x11
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"

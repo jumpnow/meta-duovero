@@ -8,7 +8,7 @@ This layer depends on:
         URI: git://git.openembedded.org/meta-openembedded
         branch: daisy
         revision: HEAD
-        commit: 9ee63ed 
+        commit: 7a35bc7 
 
         meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
