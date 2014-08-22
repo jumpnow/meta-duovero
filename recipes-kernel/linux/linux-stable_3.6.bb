@@ -4,6 +4,8 @@ KERNEL_IMAGETYPE = "uImage"
 
 COMPATIBLE_MACHINE = "duovero"
 
+PR = "r1"
+
 # for identification
 LINUX_VERSION_EXTENSION = "-jumpnow"
 
