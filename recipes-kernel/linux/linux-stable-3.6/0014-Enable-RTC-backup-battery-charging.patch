@@ -35,11 +35,11 @@ index 9277d94..2a9d467 100644
 +	}
 +
 +	/* 
-+	 * Charge battery to 3.0v 
++	 * Charge battery to 3.15v
 +	 * TWL6030 Register Map, Table 224, BBSPOR_CFG Register 
 +	 */
-+	data &= ~(BB_SEL_1 | BB_SEL_0);
-+	data |= BB_CHG_EN;
++	data &= ~BB_SEL_0;
++	data |= (BB_SEL_1 | BB_CHG_EN);
 +
 +	ret = twl_i2c_write_u8(TWL6030_MODULE_ID0, data, REG_BBSPOR_CFG);
 +	if (ret < 0)
