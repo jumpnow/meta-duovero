@@ -19,6 +19,7 @@ KERNEL_EXTRA_INSTALL = " \
  "
 
 WIFI_SUPPORT = " \
+    crda \
     dhcp-server \
     dhcp-server-config \
     hostap-daemon \
@@ -51,7 +52,6 @@ DEV_SDK_INSTALL = " \
  "
 
 DEV_EXTRAS = " \
-    avahi-daemon \
     ntp \
     ntp-tickadj \
     opencv \
