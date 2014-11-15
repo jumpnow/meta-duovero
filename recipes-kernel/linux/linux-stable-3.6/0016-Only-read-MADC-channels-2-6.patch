@@ -1,0 +1,30 @@
+From 57212a6d98c204cbb33bfd2b0540943d7f741324 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Mon, 10 Nov 2014 16:27:05 -0500
+Subject: [PATCH] Only read MADC channels 2-6
+
+---
+ drivers/mfd/twl6030-madc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/mfd/twl6030-madc.c b/drivers/mfd/twl6030-madc.c
+index 90def92..d7223f5 100644
+--- a/drivers/mfd/twl6030-madc.c
++++ b/drivers/mfd/twl6030-madc.c
+@@ -215,10 +215,10 @@ EXPORT_SYMBOL_GPL(twl6030_get_madc_conversion);
+ static int debug_twl6030_madc_show(struct seq_file *s, void *_)
+ {
+ 	int i, result;
+-	for (i = 0; i < TWL6030_MADC_MAX_CHANNELS; i++) {
++	// only read channels the duovero brings out
++	for (i = 2; i < 7; i++) {
+ 		result = twl6030_get_madc_conversion(i);
+-		seq_printf(s, "channel %3d returns result %d\n",
+-			i, result);
++		seq_printf(s, "%d:%d\n", i, result);
+ 	}
+ 	return 0;
+ }
+-- 
+1.9.1
+
