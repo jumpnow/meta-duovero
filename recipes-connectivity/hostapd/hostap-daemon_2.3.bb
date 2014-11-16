@@ -8,10 +8,8 @@ DESCRIPTION = "User space daemon for extended IEEE 802.11 management"
 inherit update-rc.d
 INITSCRIPT_NAME = "hostapd"
 
-PR = "r2"
-
-# commit from 2014-04-24
-SRCREV = "4aa9c156e583c64cf5d90751ec888c478e1155c2"
+# v2.3 
+SRCREV = "724fce8fff27e18dd4ebeec9481b958eb5628ee9"
 
 SRC_URI = " \
     git://w1.fi/hostap.git \
