@@ -12,16 +12,8 @@ QT_TOOLS = " \
     qt4-embedded-plugin-mousedriver-tslib \
  "
 
-SYNTRO = " \
-    syntrocore \
-    syntrocore-dev \
-    syntrolcam \
-    syntrolcam-init \
- "
-
 IMAGE_INSTALL += " \
     ${QT_TOOLS} \
-    ${SYNTRO} \
     psplash \
  "
 
