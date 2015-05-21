@@ -54,8 +54,7 @@ DEV_SDK_INSTALL = " \
 DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
-    opencv \
-    opencv-dev \
+    spiloop \
  "
 
 EXTRA_TOOLS_INSTALL = " \
