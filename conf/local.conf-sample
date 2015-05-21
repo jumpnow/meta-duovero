@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 1.7.1 Poky distribution 12.0.1, [dizzy] branch
+# Yocto Project 1.8.0 Poky distribution 13.0.0 [fido] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -12,8 +12,8 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
-BB_NUMBER_THREADS = "6"
-PARALLEL_MAKE = "-j6"
+#BB_NUMBER_THREADS = "8"
+#PARALLEL_MAKE = "-j8"
 
 # firmware loading is more reliable with this udev
 PREFERRED_PROVIDER_udev = "systemd"
@@ -25,9 +25,9 @@ MACHINE = "duovero"
 
 #DL_DIR = "/oe-sources"
 
-#SSTATE_DIR = "/oe9/duovero/sstate-cache"
+#SSTATE_DIR = "/oe10/duovero/sstate-cache"
 
-#TMPDIR = "/oe9/duovero/tmp-poky-dizzy-build"
+#TMPDIR = "/oe10/duovero/tmp-poky-dizzy-build"
 
 DISTRO = "poky"
 

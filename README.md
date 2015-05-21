@@ -1,14 +1,14 @@
 This layer depends on:
 
         URI: git://git.yoctoproject.org/poky.git
-        branch: dizzy
+        branch: fido 
         revision: HEAD
-        commit: ec75238 
+        commit: 59e4f9f 
 
         URI: git://git.openembedded.org/meta-openembedded
-        branch: dizzy
+        branch: fido 
         revision: HEAD
-        commit: 2ebb875 
+        commit: 5b0305d 
 
         meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
