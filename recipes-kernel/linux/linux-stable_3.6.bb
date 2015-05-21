@@ -35,5 +35,6 @@ SRC_URI = " \
     file://0012-Bluetooth-btmrvl-report-error-if-verify_fw_download-.patch \
     file://0013-ARM-OMAP4-TWL-mux-sys_drm_msecure-as-output-for-PMIC.patch \
     file://0014-Enable-RTC-backup-battery-charging.patch \
+    file://0015-Enable-spidev-in-board-file.patch \
  "
 

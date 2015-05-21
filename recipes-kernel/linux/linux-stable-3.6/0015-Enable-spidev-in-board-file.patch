@@ -1,0 +1,93 @@
+From d5e4fe121f12bb6ffcdbc0c6b25b7232b0f57758 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Thu, 21 May 2015 03:51:42 -0400
+Subject: [PATCH] Enable spidev in board file
+
+---
+ arch/arm/mach-omap2/board-duovero.c | 49 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+
+diff --git a/arch/arm/mach-omap2/board-duovero.c b/arch/arm/mach-omap2/board-duovero.c
+index b8dd650..72019ac 100644
+--- a/arch/arm/mach-omap2/board-duovero.c
++++ b/arch/arm/mach-omap2/board-duovero.c
+@@ -33,6 +33,7 @@
+ #include <linux/regulator/machine.h>
+ #include <linux/regulator/fixed.h>
+ #include <linux/usb/otg.h>
++#include <linux/spi/spi.h>
+ 
+ #include <mach/hardware.h>
+ #include <asm/hardware/gic.h>
+@@ -44,6 +45,7 @@
+ #include <plat/board.h>
+ #include <plat/usb.h>
+ #include <plat/mmc.h>
++#include <plat/mcspi.h>
+ 
+ #include "common.h"
+ #include "control.h"
+@@ -250,6 +252,52 @@ static int __init duovero_i2c_init(void)
+ 	return 0;
+ }
+ 
++static struct spi_board_info duovero_spi_board_info[] __initdata = {
++	{
++		.modalias	= "spidev",
++		.bus_num	= 1,
++		.chip_select	= 0,
++		.max_speed_hz	= 1000000,
++		.mode		= SPI_MODE_0,
++	},
++	{
++		.modalias	= "spidev",
++		.bus_num	= 1,
++		.chip_select	= 1,
++		.max_speed_hz	= 1000000,
++		.mode		= SPI_MODE_0,
++	},
++	{
++		.modalias	= "spidev",
++		.bus_num	= 1,
++		.chip_select	= 2,
++		.max_speed_hz	= 1000000,
++		.mode		= SPI_MODE_0,
++	},
++	{
++		.modalias	= "spidev",
++		.bus_num	= 1,
++		.chip_select	= 3,
++		.max_speed_hz	= 1000000,
++		.mode		= SPI_MODE_0,
++	},
++	{
++		.modalias	= "spidev",
++		.bus_num	= 4,
++		.chip_select	= 0,
++		.max_speed_hz	= 1000000,
++		.mode		= SPI_MODE_0,
++	},
++};
++
++static int __init duovero_spi_init(void)
++{
++	spi_register_board_info(duovero_spi_board_info,
++		ARRAY_SIZE(duovero_spi_board_info));
++
++	return 0;
++}
++
+ #ifdef CONFIG_OMAP_MUX
+ static struct omap_board_mux board_mux[] __initdata = {
+ 	/* WLAN IRQ - GPIO 53 */
+@@ -366,6 +414,7 @@ static void __init duovero_init(void)
+ 	omap4_mux_init(board_mux, NULL, package);
+ 
+ 	duovero_i2c_init();
++	duovero_spi_init();
+ 	platform_add_devices(duovero_devices, ARRAY_SIZE(duovero_devices));
+ 	platform_device_register(&omap_vwlan_device);
+ 	omap_serial_init();
+-- 
+1.9.1
+
