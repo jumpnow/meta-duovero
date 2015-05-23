@@ -27,7 +27,7 @@ MACHINE = "duovero"
 
 #SSTATE_DIR = "/oe10/duovero/sstate-cache"
 
-#TMPDIR = "/oe10/duovero/tmp-poky-dizzy-build"
+#TMPDIR = "/oe10/duovero/tmp-poky-fido-build"
 
 DISTRO = "poky"
 
