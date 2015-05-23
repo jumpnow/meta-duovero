@@ -1,14 +1,14 @@
 require u-boot.inc
 
-PV = "2014.10"
+PV = "2015.04"
 
 COMPATIBLE_MACHINE = "duovero"
 
 # for identification
 UBOOT_LOCALVERSION = "-jumpnow"
 
-# v2014.10
-SRCREV = "c43fd23cf619856b0763a64a6a3bcf3663058c49"
+# v2015.04
+SRCREV = "f33cdaa4c3da4a8fd35aa2f9a3172f31cc887b35"
 SRC_URI = " \
     git://git.denx.de/u-boot.git;branch=master;protocol=git \
  "
