@@ -69,6 +69,11 @@ if [ -b $DEV ]; then
 		sudo cp ${SRCDIR}/wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
 	fi
 
+	if [ -f ${SRCDIR}/zImage-omap4-duovero-parlor.dtb ]; then
+		echo "Copying zImage-omap4-duovero-parlor.dtb to /media/card/boot/"
+		sudo cp ${SRCDIR}/zImage-omap4-duovero-parlor.dtb /media/card/boot/omap4-duovero-parlor.dtb
+	fi
+
 	echo "Unmounting $DEV"
 	sudo umount $DEV
 else
