@@ -22,7 +22,6 @@ SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-3.6.y \
     file://defconfig \
     file://0001-omap4-add-duovero-support.patch \
-    file://0002-HACK-temporary-hack-to-use-cold-sw-reset-instead-of-.patch \
     file://0003-duovero-add-back-omap4_mux_init.patch \
     file://0004-perf-hard-code-NO_LIBPERL-NO_LIBPYTHON.patch \
     file://0005-duovero-invert-sense-of-card-detect-signal.patch \
