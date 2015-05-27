@@ -23,6 +23,9 @@ VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 MACHINE = "duovero"
 
+# until the USB bugs with 4.0 are worked out
+PREFERRED_VERSION_linux-stable = "3.6"
+
 #DL_DIR = "/oe-sources"
 
 #SSTATE_DIR = "/oe10/duovero/sstate-cache"
