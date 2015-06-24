@@ -12,8 +12,8 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
-#BB_NUMBER_THREADS = "8"
-#PARALLEL_MAKE = "-j8"
+BB_NUMBER_THREADS = "8"
+PARALLEL_MAKE = "-j8"
 
 # firmware loading is more reliable with this udev
 PREFERRED_PROVIDER_udev = "systemd"
@@ -21,23 +21,24 @@ PREFERRED_PROVIDER_udev = "systemd"
 # the default, but make it explicit 
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
-MACHINE = "duovero"
+PACKAGECONFIG_FB_pn-qtbase = "linuxfb"
 
-# until the USB bugs with 4.0 are worked out
-PREFERRED_VERSION_linux-stable = "3.6"
+#PREFERRED_VERSION_linux-stable = "3.6"
+
+MACHINE = "duovero"
 
 #DL_DIR = "/oe-sources"
 
-#SSTATE_DIR = "/oe10/duovero/sstate-cache"
+#SSTATE_DIR = "/oe5/duovero/sstate-cache"
 
-#TMPDIR = "/oe10/duovero/tmp-poky-fido-build"
+#TMPDIR = "/oe5/duovero/tmp-poky-fido-build"
 
 DISTRO = "poky"
 
 PACKAGE_CLASSES = "package_ipk"
 
 # i686 or x86_64
-# SDKMACHINE = "x86_64"
+SDKMACHINE = "x86_64"
 
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
