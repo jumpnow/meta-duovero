@@ -25,7 +25,7 @@ index 1c93aab..62e0464 100644
  	"bootscript=echo Running bootscript from mmc${mmcdev} ...; " \
  		"source ${loadaddr}\0" \
 -	"loadbootenv=load mmc ${mmcdev} ${loadaddr} uEnv.txt\0" \
-+	"loadbootenv=load mmc ${mmcdev} ${loadaddr} ${bootdir}/uEnv.txt\0" \
++	"loadbootenv=load mmc ${bootpart} ${loadaddr} ${bootdir}/uEnv.txt\0" \
  	"importbootenv=echo Importing environment from mmc${mmcdev} ...; " \
  		"env import -t ${loadaddr} ${filesize}\0" \
  	"loadimage=load mmc ${bootpart} ${loadaddr} ${bootdir}/${bootfile}\0" \
