@@ -1,5 +1,7 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
+PR = "r1"
+
 inherit update-rc.d
 INITSCRIPT_PACKAGES = "dhcp-server"
 INITSCRIPT_NAME = "dhcp-server"
