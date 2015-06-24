@@ -1,6 +1,7 @@
 #!/bin/bash
 
 MACHINE=duovero
+DTB_LIST="omap4-duovero-parlor jumpnow-duovero-parlor jumpnow-duovero-parlor-nodisplay"
 
 if [ "x${1}" = "x" ]; then
 	echo -e "\nUsage: ${0} <block device> [ <image-type> [<hostname>] ]\n"
@@ -43,6 +44,13 @@ if [ ! -f "${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz" ]; then
         exit 1
 fi
 
+for dtb in $DTB_LIST; do
+        if [ ! -f ${SRCDIR}/zImage-${dtb}.dtb ]; then
+                echo "DTB file not found: ${SRCDIR}/zImage-${dtb}.dtb"
+                exit 1
+        fi
+done
+
 DEV=/dev/${1}2
 
 if [ -b $DEV ]; then
@@ -54,6 +62,11 @@ if [ -b $DEV ]; then
 
 	echo "Extracting ${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
 	sudo tar -C /media/card -xJf ${SRCDIR}/${IMAGE}-image-${MACHINE}.tar.xz
+
+        for dtb in $DTB_LIST; do
+                echo "Copying ${dtb}.dtb to /media/card/boot/"
+                sudo cp ${SRCDIR}/zImage-${dtb}.dtb /media/card/boot/${dtb}.dtb
+        done
 
 	echo "Writing hostname to /etc/hostname"
 	export TARGET_HOSTNAME
@@ -69,9 +82,9 @@ if [ -b $DEV ]; then
 		sudo cp ${SRCDIR}/wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
 	fi
 
-	if [ -f ${SRCDIR}/zImage-omap4-duovero-parlor.dtb ]; then
-		echo "Copying zImage-omap4-duovero-parlor.dtb to /media/card/boot/"
-		sudo cp ${SRCDIR}/zImage-omap4-duovero-parlor.dtb /media/card/boot/omap4-duovero-parlor.dtb
+	if [ -f ${SRCDIR}/uEnv.txt ]; then
+		echo "Copying uEnv.txt to /media/card/boot"
+		sudo cp ${SRCDIR}/uEnv.txt /media/card/boot
 	fi
 
 	echo "Unmounting $DEV"
