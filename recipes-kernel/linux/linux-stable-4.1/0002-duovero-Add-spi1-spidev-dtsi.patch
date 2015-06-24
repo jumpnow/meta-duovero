@@ -1,0 +1,66 @@
+From c4e46db7a6181e10b25fade9fd8058ab07cf0f90 Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Wed, 24 Jun 2015 12:22:39 -0400
+Subject: [PATCH 1/3] duovero: Add spi1 spidev dtsi
+
+---
+ arch/arm/boot/dts/duovero-spi1-spidev.dtsi | 47 ++++++++++++++++++++++++++++++
+ 1 file changed, 47 insertions(+)
+ create mode 100644 arch/arm/boot/dts/duovero-spi1-spidev.dtsi
+
+diff --git a/arch/arm/boot/dts/duovero-spi1-spidev.dtsi b/arch/arm/boot/dts/duovero-spi1-spidev.dtsi
+new file mode 100644
+index 0000000..cb1480e
+--- /dev/null
++++ b/arch/arm/boot/dts/duovero-spi1-spidev.dtsi
+@@ -0,0 +1,47 @@
++/*
++ * Copyright (C) 2015 Jumpnow Technologies, LLC
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ */
++
++&omap4_pmx_core {
++	mcspi1_pins: pinmux_spi1_pins {
++		pinctrl-single,pins = <
++			OMAP4_IOPAD(0x132, PIN_INPUT_PULLUP | MUX_MODE0)	/* mcspi1_clk, J9.3 */
++			OMAP4_IOPAD(0x134, PIN_INPUT_PULLUP | MUX_MODE0)	/* mcspi1_somi, J9.7 */
++			OMAP4_IOPAD(0x136, PIN_OUTPUT_PULLUP | MUX_MODE0)	/* mcspi1_simo, J9.5 */
++			OMAP4_IOPAD(0x138, PIN_OUTPUT_PULLUP | MUX_MODE0)	/* mcspi1_cs0, J9.4 */
++			OMAP4_IOPAD(0x13a, PIN_OUTPUT_PULLUP | MUX_MODE0)	/* mcspi1_cs1, J9.6 */
++			OMAP4_IOPAD(0x13c, PIN_OUTPUT_PULLUP | MUX_MODE0)	/* mcspi1_cs2, J9.8 */
++		>;
++	};
++};
++
++&mcspi1 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&mcspi1_pins>;
++	
++	spidev1_0: spidev1@0 {
++		compatible = "generic,spi";
++		reg = <0>;
++		spi-max-frequency = <12000000>;
++		/* spi-cpha; sets CPHA=1, default is CPHA=0 */
++		/* spi-cpol; sets CPOL=1, default is CPOL=0 */
++		/* spi-cs-high; default is spi cs low */
++	};
++
++	spidev1_1: spidev1@1 {
++		compatible = "generic,spi";
++		reg = <1>;
++		spi-max-frequency = <12000000>;
++	};
++
++	spidev1_2: spidev1@2 {
++		compatible = "generic,spi";
++		reg = <2>;
++		spi-max-frequency = <12000000>;
++	};
++};
+-- 
+2.1.4
+
