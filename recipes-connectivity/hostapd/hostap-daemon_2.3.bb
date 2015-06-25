@@ -8,6 +8,8 @@ DESCRIPTION = "User space daemon for extended IEEE 802.11 management"
 inherit update-rc.d
 INITSCRIPT_NAME = "hostapd"
 
+PR = "r1"
+
 # v2.3 
 SRCREV = "724fce8fff27e18dd4ebeec9481b958eb5628ee9"
 

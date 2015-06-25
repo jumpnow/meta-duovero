@@ -18,6 +18,9 @@ esac
 
 case "$1" in
     start)
+	echo "Enabling AP interface"
+	iw phy0 interface add uap0 type __ap
+	ifup uap0
 	echo -n "Starting $DESC: "
 	start-stop-daemon -S -x $DAEMON -- $ARGS
 	echo "$NAME."
@@ -26,18 +29,12 @@ case "$1" in
 	echo -n "Stopping $DESC: "
 	start-stop-daemon -K -x $DAEMON
 	echo "$NAME."
-	;;
-    restart)
-	$0 stop
-	$0 start
-	;;
-    reload)
-	echo -n "Reloading $DESC: "
-	killall -HUP $(basename ${DAEMON})
-	echo "$NAME."
+	echo "Disabling AP interface"
+	ifdown uap0
+	iw uap0 del
 	;;
     *)
-	echo "Usage: $0 {start|stop|restart|reload}"
+	echo "Usage: $0 {start|stop}"
 	exit 1
 	;;
 esac
