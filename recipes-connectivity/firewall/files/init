@@ -1,0 +1,39 @@
+#!/bin/sh
+NAME=firewall.sh
+DESC="Add a simple NAT rule for AP use"
+
+[ -r /etc/default/firewall ] && . /etc/default/firewall
+
+set -e
+
+case "$FIREWALL_ENABLE" in
+	[Nn]*)
+		exit 0
+		;;
+esac
+
+NAT_MODULE_COUNT=`/bin/lsmod | grep iptable_nat | wc -l`
+
+case "$1" in
+    start)
+	if [ ${NAT_MODULE_COUNT} -eq 0 ]; then
+		echo "Loading kernel module: iptable_nat"
+		modprobe iptable_nat
+	fi
+
+	echo "Enabling iptables NAT rule"
+	/usr/sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+	;;
+
+    stop)
+	echo "Removing iptables NAT rule"
+	/usr/sbin/iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+	;;
+
+    *)
+	echo "Usage: $0 {start|stop}"
+	exit 1
+	;;
+esac
+
+exit 0
