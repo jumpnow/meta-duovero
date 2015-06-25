@@ -22,6 +22,7 @@ WIFI_SUPPORT = " \
     crda \
     dhcp-server \
     dhcp-server-config \
+    firewall \
     hostap-daemon \
     iptables \
     iw \
@@ -54,7 +55,14 @@ DEV_SDK_INSTALL = " \
 DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
+    perl-modules \
     spiloop \
+ "
+
+PYTHON_SUPPORT = " \
+    python-core \
+    python-fcntl \
+    python-subprocess \
  "
 
 EXTRA_TOOLS_INSTALL = " \
@@ -82,6 +90,7 @@ IMAGE_INSTALL += " \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
+    ${PYTHON_SUPPORT} \
     ${WIFI_SUPPORT} \
  "
 
