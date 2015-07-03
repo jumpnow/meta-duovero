@@ -19,4 +19,4 @@ This layer depends on:
 
 Instructions for using this layer can be found at [jumpnowtek.com][duovero-yocto-build]
 
-[duovero-yocto-build]: http://www.jumpnowtek.com/gumstix/yocto/Duovero-Systems-with-Yocto.html
+[duovero-yocto-build]: http://www.jumpnowtek.com/yocto/Duovero-Systems-with-Yocto.html
