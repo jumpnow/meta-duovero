@@ -8,6 +8,8 @@ DEPENDS += "qtbase"
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/scottellis/tspress.git"
 
+PR = "r1"
+
 S = "${WORKDIR}/git"
 
 require recipes-qt/qt5/qt5.inc
