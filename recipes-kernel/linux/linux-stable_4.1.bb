@@ -19,7 +19,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/linux-stable-4.1:"
 
 S = "${WORKDIR}/git"
 
-PR = "r7"
+PR = "r8"
 
 # v4.1.6
 SRCREV = "4ff62ca06c0c0b084f585f7a2cfcf832b21d94fc"
