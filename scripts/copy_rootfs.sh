@@ -47,7 +47,7 @@ DEV=/dev/${1}2
 
 if [ -b $DEV ]; then
 	echo "Formatting $DEV as ext3"
-	sudo mkfs.ext3 -L ROOT $DEV
+	sudo mkfs.ext4 -L ROOT $DEV
 
 	echo "Mounting $DEV"
 	sudo mount $DEV /media/card

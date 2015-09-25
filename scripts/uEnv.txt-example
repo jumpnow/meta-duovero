@@ -10,7 +10,7 @@ fdtaddr=0x88000000
 fdtfile=jumpnow-duovero-parlor.dtb
 loadaddr=0x82000000
 mmcroot=/dev/mmcblk0p2 ro
-mmcrootfstype=ext3 rootwait
+mmcrootfstype=ext4 rootwait
 optargs=consoleblank=0
 nodisplay_dtb=jumpnow-duovero-parlor-nodisplay.dtb
 mmcargs=setenv bootargs console=${console} ${optargs} root=${mmcroot} rootfstype=${mmcrootfstype}
