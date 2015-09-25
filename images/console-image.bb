@@ -56,6 +56,7 @@ DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
     perl-modules \
+    serialecho \
     spiloop \
  "
 
