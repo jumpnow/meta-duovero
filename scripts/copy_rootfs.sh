@@ -46,7 +46,7 @@ fi
 DEV=/dev/${1}2
 
 if [ -b $DEV ]; then
-	echo "Formatting $DEV as ext3"
+	echo "Formatting $DEV as ext4"
 	sudo mkfs.ext4 -L ROOT $DEV
 
 	echo "Mounting $DEV"
