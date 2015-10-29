@@ -7,6 +7,11 @@ if [ "x${1}" = "x" ]; then
 	exit 0
 fi
 
+if [ ! -d /media/card ]; then
+	echo "Temporary mount point [/media/card] not found"
+	exit 1
+fi
+
 if [ "x${2}" = "x" ]; then
         IMAGE=console
 else
