@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 1.8.1 Poky distribution 13.0.0 [fido] branch
+# Yocto Project 2.0 Poky distribution [jethro] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -27,7 +27,7 @@ MACHINE = "duovero"
 
 #SSTATE_DIR = "/oe5/duovero/sstate-cache"
 
-#TMPDIR = "/oe5/duovero/tmp-poky-fido-build"
+#TMPDIR = "/oe5/duovero/tmp-poky-jethro-build"
 
 DISTRO = "poky"
 
