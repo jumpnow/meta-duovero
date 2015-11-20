@@ -61,13 +61,13 @@ dd if=/dev/zero of=$DRIVE bs=1024 count=1024
 # Standard 2 partitions
 # Sectors are 512 bytes
 # 0-127: 64KB, no partition, MBR then empty
-# 128-131071: ~64 MB, dos partition, MLO, u-boot, kernel
-# 131072-end: 2GB+, linux partition, root filesystem
+# 128-131199: 64 MB, dos partition, MLO, u-boot, kernel
+# 131200-end: 2GB+, linux partition, root filesystem
 
 echo -e "\n=== Creating 2 partitions ===\n"
 {
-echo 128,130944,0x0C,*
-echo 131072,,,-
+echo 128,131072,0x0C,*
+echo 131200,,,-
 } | $SFDISK_CMD $DRIVE
 
 
