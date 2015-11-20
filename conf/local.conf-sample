@@ -21,6 +21,8 @@ VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
 PACKAGECONFIG_FB_pn-qtbase = "linuxfb"
 
+#PREFERRED_VERSION_linux-stable = "4.1"
+
 MACHINE = "duovero"
 
 #DL_DIR = "/oe-sources"
@@ -45,4 +47,3 @@ PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"
 
 CONF_VERSION = "1"
-
