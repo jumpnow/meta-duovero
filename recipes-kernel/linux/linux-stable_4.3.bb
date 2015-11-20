@@ -24,11 +24,10 @@ PR = "r1"
 # v4.3
 SRCREV = "6a13feb9c82803e2b815eca72fa7a9f5561d7861"
 SRC_URI = " \
-    git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=master \
+    git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.3.y \
     file://defconfig \
     file://0001-spidev-Add-generic-compatible-id.patch \
     file://0002-duovero-Add-spi1-spidev-dtsi.patch \
     file://0003-duovero-Add-spi4-spidev-dtsi.patch \
     file://0004-kernel-Add-some-custom-dts-files.patch \
  "
-
