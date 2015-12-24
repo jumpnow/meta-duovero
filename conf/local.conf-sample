@@ -27,9 +27,9 @@ MACHINE = "duovero"
 
 #DL_DIR = "/oe-sources"
 
-#SSTATE_DIR = "/oe5/duovero/sstate-cache"
+#SSTATE_DIR = "/oe5/duo/sstate-cache"
 
-#TMPDIR = "/oe5/duovero/tmp-poky-jethro-build"
+#TMPDIR = "/oe5/duo/tmp-jethro"
 
 DISTRO = "poky"
 
