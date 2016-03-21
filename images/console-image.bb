@@ -19,11 +19,9 @@ KERNEL_EXTRA_INSTALL = " \
  "
 
 WIFI_SUPPORT = " \
-    crda \
     dhcp-server \
     dhcp-server-config \
     firewall \
-    hostap-daemon \
     iptables \
     iw \
     linux-firmware-sd8787 \
