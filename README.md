@@ -3,17 +3,17 @@ This layer depends on:
         URI: git://git.yoctoproject.org/poky.git
         branch: jethro 
         revision: HEAD
-        commit: 347347a 
+        commit: 3b223f7
 
         URI: git://git.openembedded.org/meta-openembedded
         branch: jethro 
         revision: HEAD
-        commit: 4fdb203 
+        commit: dc56349
 
         URI: https://github.com/meta-qt5/meta-qt5
         branch: jethro
         revision: HEAD
-        commit: 0454fb0 
+        commit: 9bfcf79
 
         meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
