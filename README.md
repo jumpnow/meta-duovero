@@ -1,19 +1,19 @@
 This layer depends on:
 
         URI: git://git.yoctoproject.org/poky.git
-        branch: jethro 
+        branch: krogoth 
         revision: HEAD
-        commit: 6dba9ab
+        commit: 898a783
 
         URI: git://git.openembedded.org/meta-openembedded
-        branch: jethro 
+        branch: krogoth 
         revision: HEAD
-        commit: c305ac5
+        commit: 2092396
 
         URI: https://github.com/meta-qt5/meta-qt5
-        branch: jethro
+        branch: krogoth
         revision: HEAD
-        commit: 9bfcf79
+        commit: d715f2c
 
         meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
