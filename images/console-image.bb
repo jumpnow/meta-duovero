@@ -69,7 +69,9 @@ EXTRA_TOOLS_INSTALL = " \
     iperf \
     htop \
     less \
+    memtester \
     nano \
+    netcat \
     procps \
     sysfsutils \
     tcpdump \
