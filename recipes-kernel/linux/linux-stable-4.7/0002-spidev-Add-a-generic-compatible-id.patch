@@ -1,7 +1,7 @@
-From 1af105ab1450b321b15702041b3f02ca3bee7c69 Mon Sep 17 00:00:00 2001
+From d4ce01f03f725bcf353180369fb380e1757c5d7d Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sun, 14 Aug 2016 07:03:31 -0400
-Subject: [PATCH 1/2] spidev: Add a generic compatible id
+Subject: [PATCH 2/3] spidev: Add a generic compatible id
 
 ---
  drivers/spi/spidev.c | 1 +

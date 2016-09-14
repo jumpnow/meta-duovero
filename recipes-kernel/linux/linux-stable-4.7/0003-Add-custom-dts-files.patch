@@ -1,7 +1,7 @@
-From 6972effa50a20b705c69b31dcace585df89c5257 Mon Sep 17 00:00:00 2001
+From fb5b82fc9629d8d15cb0d7d2eb1cb36289d9c4fd Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Thu, 25 Aug 2016 08:28:28 -0400
-Subject: [PATCH 2/2] Add custom dts files
+Subject: [PATCH 3/3] Add custom dts files
 
 ---
  arch/arm/boot/dts/duovero-spi1-spidev.dtsi         |  47 +++++
