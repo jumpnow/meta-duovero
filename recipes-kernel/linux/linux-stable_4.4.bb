@@ -19,13 +19,14 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/linux-stable-4.4:"
 
 S = "${WORKDIR}/git"
 
-PR = "r8"
+PR = "r9"
 
-# v4.4.19
-SRCREV = "85184740541c2b80b72ebfa46cfe065ec1d1058f"
+# v4.4.20
+SRCREV = "2cb99ded2f551c78506e5f7bbf6c0d7613351ab1"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-4.4.y \
     file://defconfig \
-    file://0001-spidev-Add-a-generic-compatible-id.patch \
-    file://0002-Add-custom-dts-files.patch \
+    file://0001-ARM-omap4-wakeupgen-Remove-gic-parent-from-usb-host.patch \
+    file://0002-spidev-Add-a-generic-compatible-id.patch \
+    file://0003-Add-custom-dts-files.patch \
  "
