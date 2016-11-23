@@ -12,21 +12,19 @@ CORE_OS = " \
     openssh openssh-keygen openssh-sftp-server \
     term-prompt \
     tzdata \
- "
+"
 
 KERNEL_EXTRA_INSTALL = " \
     kernel-modules \
- "
+"
 
 WIFI_SUPPORT = " \
-    dhcp-server \
-    dhcp-server-config \
-    firewall \
-    iptables \
+    crda \
     iw \
     linux-firmware-sd8787 \
+    wireless-tools \
     wpa-supplicant \
- "
+"
 
 DEV_SDK_INSTALL = " \
     binutils \
@@ -36,10 +34,12 @@ DEV_SDK_INSTALL = " \
     cpp-symlinks \
     diffutils \
     file \
-    gcc \
-    gcc-symlinks \
     g++ \
     g++-symlinks \
+    gcc \
+    gcc-symlinks \
+    gdb \
+    gdbserver \
     gettext \
     git \
     ldd \
@@ -47,25 +47,25 @@ DEV_SDK_INSTALL = " \
     libstdc++-dev \
     libtool \
     make \
+    perl-modules \
     pkgconfig \
- "
+    python-modules \
+"
 
 DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
-    perl-modules \
-    python-modules \
     serialecho \
     spiloop \
- "
+"
 
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
     devmem2 \
+    dosfstools \
     ethtool \
     findutils \
     i2c-tools \
-    iftop \
     iperf \
     htop \
     less \
@@ -76,9 +76,11 @@ EXTRA_TOOLS_INSTALL = " \
     sysfsutils \
     tcpdump \
     unzip \
+    util-linux \
+    util-linux-blkid \
     wget \
     zip \
- "
+"
 
 IMAGE_INSTALL += " \
     ${CORE_OS} \
@@ -103,4 +105,3 @@ ROOTFS_POSTPROCESS_COMMAND += " \
  "
 
 export IMAGE_BASENAME = "console-image"
-

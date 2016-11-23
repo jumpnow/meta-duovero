@@ -1,0 +1,16 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ${HOME}/poky-morty/meta \
+  ${HOME}/poky-morty/meta-poky \
+  ${HOME}/poky-morty/meta-openembedded/meta-oe \
+  ${HOME}/poky-morty/meta-openembedded/meta-networking \
+  ${HOME}/poky-morty/meta-openembedded/meta-python \
+  ${HOME}/poky-morty/meta-qt5 \
+  ${HOME}/duovero/meta-duovero \
+  "

@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 2.1 Poky distribution [krogoth] branch
+# Yocto Project 2.2 Poky distribution [morty] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -13,15 +13,15 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "eudev"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
-PREFERRED_VERSION_linux-stable = "4.4"
+PREFERRED_VERSION_linux-stable = "4.8.%"
 
 MACHINE = "duovero"
 
-# DL_DIR = "${HOME}/oe-sources"
+#DL_DIR = "${HOME}/oe-sources"
 
-# SSTATE_DIR = "/oe5/duo/sstate-cache"
+#SSTATE_DIR = "/oe5/duo/sstate-cache"
 
-# TMPDIR = "/oe5/duo/tmp-krogoth"
+#TMPDIR = "/oe5/duo/tmp-morty"
 
 DISTRO = "poky"
 
