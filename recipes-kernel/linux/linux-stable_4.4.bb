@@ -19,7 +19,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/linux-stable-4.4:"
 
 S = "${WORKDIR}/git"
 
-PR = "r4"
+PR = "r5"
 
 PV = "4.4.52"
 SRCREV = "dd4534d88b93a911983503851ec9441787a4997d"
@@ -29,4 +29,5 @@ SRC_URI = " \
     file://0001-ARM-omap4-wakeupgen-Remove-gic-parent-from-usb-host.patch \
     file://0002-spidev-Add-a-generic-compatible-id.patch \
     file://0003-Add-custom-dts-files.patch \
+    file://0004-rtc-twl-Enable-battery-charging.patch \
  "
