@@ -13,15 +13,15 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "eudev"
 VIRTUAL_RUNTIME_init_manager = "sysvinit"
 
-PREFERRED_VERSION_linux-stable = "4.8.%"
+PREFERRED_VERSION_linux-stable = "4.4.%"
 
 MACHINE = "duovero"
 
 #DL_DIR = "${HOME}/oe-sources"
 
-#SSTATE_DIR = "/oe5/duo/sstate-cache"
+#SSTATE_DIR = "/oe6/duo/sstate-cache"
 
-#TMPDIR = "/oe5/duo/tmp-morty"
+#TMPDIR = "/oe6/duo/tmp-morty"
 
 DISTRO = "poky"
 
@@ -37,5 +37,7 @@ USER_CLASSES = "image-mklibs image-prelink"
 PATCHRESOLVE = "noop"
 
 RM_OLD_IMAGE = "1"
+
+#INHERIT += "rm_work"
 
 CONF_VERSION = "1"
