@@ -30,7 +30,7 @@ index 2dc787d..7f522b3 100644
 +
 +	ret = twl_i2c_read_u8(TWL6030_MODULE_ID0, &data, REG_BBSPOR_CFG);
 +	if (ret < 0) {
-+		pr_err("twl_rtc: read bbspor_cfg failed: %d\n", ret);
++		pr_err("read bbspor_cfg failed: %d\n", ret);
 +		return ret;
 +	}
 +
@@ -43,9 +43,9 @@ index 2dc787d..7f522b3 100644
 +
 +	ret = twl_i2c_write_u8(TWL6030_MODULE_ID0, data, REG_BBSPOR_CFG);
 +	if (ret < 0)
-+		pr_err("twl_rtc: write bbspor_cfg failed: %d\n", ret);
++		pr_err("write bbspor_cfg failed: %d\n", ret);
 +	else
-+		pr_info("twl_rtc: enabled rtc battery charging\n");
++		pr_info("enabled rtc battery charging\n");
 +
 +	return ret;
 +}
