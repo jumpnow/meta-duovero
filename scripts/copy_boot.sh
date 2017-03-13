@@ -3,7 +3,7 @@
 MACHINE=duovero
 
 if [ "x${1}" = "x" ]; then
-	echo -e "\nUsage: ${0} <block device>\n"
+	echo "Usage: ${0} <block device>"
 	exit 0
 fi
 
@@ -13,10 +13,10 @@ if [ ! -d /media/card ]; then
 fi
 
 if [ -z "$OETMP" ]; then
-	echo -e "\nWorking from local directory"
+	echo "Working from local directory"
 	SRCDIR=.
 else
-	echo -e "\nOETMP: $OETMP"
+	echo "OETMP: $OETMP"
 
 	if [ ! -d ${OETMP}/deploy/images/${MACHINE} ]; then
 		echo "Directory not found: ${OETMP}/deploy/images/${MACHINE}"
@@ -27,61 +27,48 @@ else
 fi 
 
 if [ ! -f ${SRCDIR}/MLO-${MACHINE} ]; then
-	echo -e "File not found: ${SRCDIR}/MLO-${MACHINE}\n"
+	echo "File not found: ${SRCDIR}/MLO-${MACHINE}"
 	exit 1
 fi
 
 if [ ! -f ${SRCDIR}/u-boot-${MACHINE}.img ]; then
-	echo -e "File not found: ${SRCDIR}/u-boot-${MACHINE}.img\n"
+	echo "File not found: ${SRCDIR}/u-boot-${MACHINE}.img"
 	exit 1
 fi
 
-if [ -f ${SRCDIR}/zImage-${MACHINE}.bin ]; then
-	# prefer zImage over uImage
-	# zImage is copied to /boot as part of rootfs
-	USING_UIMAGE=0
+if [ -b ${1} ]; then
+	DEV=${1}
+elif [ -b "/dev/${1}1" ]; then
+	DEV=/dev/${1}1
+elif [ -b "/dev/${1}p1" ]; then
+	DEV=/dev/${1}p1
 else
-	if [ ! -f ${SRCDIR}/uImage-${MACHINE}.bin ]; then
-		echo -e "File not found: ${SRCDIR}/uImage-${MACHINE}.bin\n"
-		exit 1
-	fi
-
-	USING_UIMAGE=1
+	echo "Block device not found: /dev/${1}1 or /dev/${1}p1"
+	exit 1
 fi
 
-DEV=/dev/${1}1
+echo "Formatting FAT partition on $DEV"
+sudo mkfs.vfat -F 32 ${DEV} -n BOOT
 
-if [ -b $DEV ]; then
-	echo "Formatting FAT partition on $DEV"
-	sudo mkfs.vfat -F 32 ${DEV} -n BOOT
+echo "Mounting $DEV"
+sudo mount ${DEV} /media/card
 
-	echo "Mounting $DEV"
-	sudo mount ${DEV} /media/card
+echo "Copying MLO"
+sudo cp ${SRCDIR}/MLO-${MACHINE} /media/card/MLO
 
-	echo "Copying MLO"
-	sudo cp ${SRCDIR}/MLO-${MACHINE} /media/card/MLO
+echo "Copying u-boot"
+sudo cp ${SRCDIR}/u-boot-${MACHINE}.img /media/card/u-boot.img
 
-	echo "Copying u-boot"
-	sudo cp ${SRCDIR}/u-boot-${MACHINE}.img /media/card/u-boot.img
-
-	if [ -f ${SRCDIR}/uEnv.txt ]; then
-		echo "Copying uEnv.txt"
-		sudo cp ${SRCDIR}/uEnv.txt /media/card/uEnv.txt
-	elif [ -f ./uEnv.txt ]; then
-		echo "Copying uEnv.txt"
-		sudo cp ./uEnv.txt /media/card/uEnv.txt
-	fi
-
-	if [ ${USING_UIMAGE} = 1 ]; then 
-		echo "Copying uImage"
-		sudo cp ${SRCDIR}/uImage-${MACHINE}.bin /media/card/uImage
-	fi
-
-	echo "Unmounting ${DEV}"
-	sudo umount ${DEV}
-else
-	echo -e "\nBlock device not found: $DEV\n"
+if [ -f ${SRCDIR}/uEnv.txt ]; then
+	echo "Copying ${SRCDIR}/uEnv.txt to /media/card"
+	sudo cp ${SRCDIR}/uEnv.txt /media/card
+elif [ -f ./uEnv.txt ]; then
+	echo "Copying ./uEnv.txt to /media/card"
+	sudo cp ./uEnv.txt /media/card
 fi
+
+echo "Unmounting ${DEV}"
+sudo umount ${DEV}
 
 echo "Done"
 
