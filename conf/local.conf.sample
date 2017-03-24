@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 2.2 Poky distribution [morty] branch
+# Yocto Project 2.2.1 Poky distribution [morty] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -38,6 +38,6 @@ PATCHRESOLVE = "noop"
 
 RM_OLD_IMAGE = "1"
 
-#INHERIT += "rm_work"
+INHERIT += "rm_work"
 
 CONF_VERSION = "1"
