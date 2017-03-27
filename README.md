@@ -3,7 +3,7 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: morty
     revision: HEAD
-    commit: 6c08cf2
+    commit: 924e576
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: morty
