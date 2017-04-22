@@ -1,21 +1,21 @@
-From 2b975f6108375be067034e1d55301235a6c2d1dd Mon Sep 17 00:00:00 2001
+From 46c789c7edc2298727d79f61a07ad186d0bfd19d Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
-Date: Wed, 1 Mar 2017 15:36:47 -0500
-Subject: [PATCH 2/3] spidev: Add a generic compatible id
+Date: Sat, 22 Apr 2017 08:56:44 -0400
+Subject: [PATCH 3/4] spidev: Add spidev compatible id
 
 ---
  drivers/spi/spidev.c | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/drivers/spi/spidev.c b/drivers/spi/spidev.c
-index 2e05046..2dee542 100644
+index 2e05046..d780491 100644
 --- a/drivers/spi/spidev.c
 +++ b/drivers/spi/spidev.c
 @@ -696,6 +696,7 @@ static struct class *spidev_class;
  static const struct of_device_id spidev_dt_ids[] = {
  	{ .compatible = "rohm,dh2228fv" },
  	{ .compatible = "lineartechnology,ltc2488" },
-+	{ .compatible = "generic,spi" },
++	{ .compatible = "spidev" },
  	{},
  };
  MODULE_DEVICE_TABLE(of, spidev_dt_ids);
