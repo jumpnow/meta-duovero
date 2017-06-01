@@ -61,6 +61,7 @@ DEV_EXTRAS = " \
 
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
+    cpufrequtils \
     devmem2 \
     dosfstools \
     ethtool \
@@ -97,7 +98,6 @@ IMAGE_INSTALL += " \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
-    ${MQTT} \
     ${WIFI_SUPPORT} \
  "
 
