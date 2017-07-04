@@ -3,7 +3,7 @@ This layer depends on:
     URI: git://git.yoctoproject.org/poky.git
     branch: pyro
     revision: HEAD
-    commit: 645467e
+    commit: f0d128e
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: pyro
@@ -11,9 +11,9 @@ This layer depends on:
     commit: 5e82995
 
     URI: https://github.com/meta-qt5/meta-qt5.git
-    branch: master
+    branch: pyro
     revision: HEAD
-    commit: 6605c48
+    commit: 31761f6
 
     meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
