@@ -1,7 +1,7 @@
-From 46c789c7edc2298727d79f61a07ad186d0bfd19d Mon Sep 17 00:00:00 2001
+From 3ca35b78c905a345010bf83bcae4f33b65a94aaa Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sat, 22 Apr 2017 08:56:44 -0400
-Subject: [PATCH 3/4] spidev: Add spidev compatible id
+Subject: [PATCH 3/6] spidev: Add spidev compatible id
 
 ---
  drivers/spi/spidev.c | 1 +

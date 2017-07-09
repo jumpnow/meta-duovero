@@ -1,7 +1,7 @@
-From 0c706717360d8ebcce95ff0293cda98fbd7a2d7d Mon Sep 17 00:00:00 2001
+From 07e7d6344f71acfac3ba7f3f5807292955d7aed9 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Wed, 1 Mar 2017 15:34:35 -0500
-Subject: [PATCH 2/4] ARM: omap4: Remove gic parent from usb host
+Subject: [PATCH 2/6] ARM: omap4: Remove gic parent from usb host
 
 This looks like an oversight from commit 7136d457f36.
 
