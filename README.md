@@ -1,19 +1,14 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: pyro
+    branch: rocko
     revision: HEAD
-    commit: 5fd0170
+    commit: c2b641c
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: pyro
+    branch: rocko
     revision: HEAD
-    commit: 5e82995
-
-    URI: git://code.qt.io/yocto/meta-qt5.git
-    branch: 5.9
-    revision: HEAD
-    commit: 545a669
+    commit: 6e3fc5b
 
     meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 

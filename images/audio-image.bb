@@ -1,6 +1,5 @@
 SUMMARY = "Audio development image"
 HOMEPAGE = "http://www.jumpnowtek.com"
-LICENSE = "MIT"
 
 require console-image.bb
 

@@ -1,6 +1,5 @@
 SUMMARY = "A console development image with some C/C++ dev tools"
 HOMEPAGE = "http://www.jumpnowtek.com"
-LICENSE = "MIT"
 
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"
@@ -81,15 +80,6 @@ EXTRA_TOOLS_INSTALL = " \
     util-linux-blkid \
     wget \
     zip \
-"
-
-MQTT = " \
-    libmosquitto1 \
-    libmosquittopp1 \
-    mosquitto \
-    mosquitto-dev \
-    mosquitto-clients \
-    python-paho-mqtt \
 "
 
 IMAGE_INSTALL += " \

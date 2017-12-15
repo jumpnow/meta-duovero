@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 2.3 Poky distribution [pyro] branch
+# Yocto Project 2.4 Poky distribution [rocko] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -13,7 +13,7 @@ PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "eudev"
 VIRTUAL-RUNTIME_init_manager = "sysvinit"
 
-PREFERRED_VERSION_linux-stable = "4.9.%"
+#PREFERRED_VERSION_linux-stable = "4.14.%"
 
 MACHINE = "duovero"
 
@@ -21,7 +21,7 @@ MACHINE = "duovero"
 
 #SSTATE_DIR = "/oe7/duo/sstate-cache"
 
-#TMPDIR = "/oe7/duo/tmp-pyro"
+#TMPDIR = "/oe7/duo/tmp-rocko"
 
 DISTRO = "poky"
 
