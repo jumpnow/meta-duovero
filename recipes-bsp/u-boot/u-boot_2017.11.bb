@@ -2,7 +2,7 @@ require u-boot.inc
 
 PV = "2017.11"
 
-COMPATIBLE_MACHINE = "duovero"
+COMPATIBLE_MACHINE = "none"
 
 UBOOT_LOCALVERSION = "-jumpnow"
 
