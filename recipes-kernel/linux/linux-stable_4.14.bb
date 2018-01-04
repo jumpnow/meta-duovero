@@ -4,9 +4,7 @@ COMPATIBLE_MACHINE = "duovero"
 
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-KERNEL_DEVICETREE = " \
-    omap4-duovero-parlor.dtb \
-"
+KERNEL_DEVICETREE ?= "omap4-duovero-parlor.dtb"
 
 LINUX_VERSION = "4.14"
 LINUX_VERSION_EXTENSION = "-jumpnow"
