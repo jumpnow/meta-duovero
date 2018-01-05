@@ -11,7 +11,6 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio opengl"
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 
 PREFERRED_PROVIDER_udev = "eudev"
-VIRTUAL-RUNTIME_init_manager = "sysvinit"
 
 MACHINE = "duovero"
 
@@ -19,9 +18,9 @@ KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
 #DL_DIR = "${HOME}/oe-sources"
 
-#SSTATE_DIR = "/oe9/duo/sstate-cache"
+#SSTATE_DIR = "/oe9/duom/sstate-cache"
 
-#TMPDIR = "/oe9/duo/tmp-rocko"
+#TMPDIR = "/oe9/duom/tmp-rocko"
 
 DISTRO = "poky"
 
@@ -43,3 +42,17 @@ RM_OLD_IMAGE = "1"
 INHERIT += "rm_work"
 
 CONF_VERSION = "1"
+
+# mender stuff
+MENDER_ARTIFACT_NAME = "duo-test-1"
+INHERIT += "mender-image mender-install mender-uboot"
+MENDER_SERVER_URL = "https://octo.jumpnow"
+
+MENDER_STORAGE_DEVICE = "/dev/mmcblk0"
+IMAGE_ROOTFS_SIZE = "1048576"
+MENDER_STORAGE_TOTAL_SIZE_MB = "3616"
+MENDER_PARTITION_ALIGNMENT_KB = "4096"
+MENDER_BOOT_PART_SIZE_MB = "8"
+MENDER_DATA_PART_SIZE_MB = "1536"
+MENDER_UBOOT_ENV_STORAGE_DEVICE_OFFSET_1 = "0x400000"
+MENDER_UBOOT_ENV_STORAGE_DEVICE_OFFSET_2 = "0x600000"
