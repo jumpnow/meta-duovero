@@ -1,6 +1,9 @@
 #!/bin/bash
 
-TOPDIR=${HOME}/duovero
+if [ -z ${TOPDIR} ]; then
+    TOPDIR=${HOME}/duovero
+fi
+
 img_name=mender-test
 cardsize=4
 
@@ -26,8 +29,13 @@ fi
 TMPDIR=$(grep "^TMPDIR" ${local_conf} | awk '{ print $3; }' | sed 's/"//g')
 
 if [ -z "${TMPDIR}" ]; then
-    echo "TMPDIR definition not found in local.conf"
-    exit 1
+    if [ -d "${TOPDIR}/build/tmp" ]; then
+        # assume the default
+        TMPDIR=${TOPDIR}/build/tmp
+    else
+        echo "TMPDIR definition not found in local.conf"
+        exit 1
+    fi
 fi
 
 dstdir=${TOPDIR}/upload
@@ -117,7 +125,7 @@ sudo losetup -P ${loopdev} ${dstdir}/${sdimg}
 export OETMP=${TMPDIR}
 
 echo "***** Copying the boot partition *****"
-dev=${loopdev}
+dev=${loopdev}p1
 ./copy_boot.sh ${dev}
 
 if [ $? -ne 0 ]; then

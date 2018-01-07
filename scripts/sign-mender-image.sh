@@ -2,7 +2,9 @@
 
 IMG=mender-test
 
-TOPDIR="${HOME}/duovero"
+if [ -z ${TOPDIR} ]; then
+    TOPDIR="${HOME}/duovero"
+fi
 
 if [ ! -d ${TOPDIR}/build ]; then
     echo "Build directory not found: ${TOPDIR}/build"
