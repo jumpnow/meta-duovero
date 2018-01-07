@@ -12,5 +12,5 @@ BBLAYERS ?= " \
   ${HOME}/poky-rocko/meta-openembedded/meta-networking \
   ${HOME}/poky-rocko/meta-openembedded/meta-python \
   ${HOME}/poky-rocko/meta-mender/meta-mender-core \
-  ${HOME}/duovero-mender/meta-duovero \
+  ${HOME}/duovero/meta-duovero \
 "
