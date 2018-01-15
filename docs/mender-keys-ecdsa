@@ -1,0 +1,27 @@
+WARNING: Signature validation using ecdsa keys has been failing for
+me ~1% of the time. Using rsa keys I have not seen the same failures.
+The failure shows up as the mender-artifact tool generating different
+manifest.sig files using the same input. The problem is repeatable
+on different machines.
+
+$ openssl ecparam -genkey -name prime256v1 -out private-and-params.key
+
+$ openssl ec -in private-and-params.key -out private.key
+read EC key
+writing EC key
+
+$ openssl ec -in private-and-params.key -pubout -out public.key
+read EC key
+writing EC key
+
+The public key gets copied to
+
+  meta-duovero/recipes-mender/mender/files/artifact-verify-key.pem
+
+to be installed on the devices.
+
+The private key is used to sign the artifacts with the mender-artifact tool.
+
+See the script
+
+  meta-duovero/scripts/sign-mender-image.sh
