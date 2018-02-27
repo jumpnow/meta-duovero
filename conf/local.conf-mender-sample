@@ -44,9 +44,9 @@ INHERIT += "rm_work"
 CONF_VERSION = "1"
 
 # mender stuff
-MENDER_ARTIFACT_NAME = "duo-test-1"
+MENDER_ARTIFACT_NAME = "duo-t1"
 INHERIT += "mender-image mender-install mender-uboot"
-MENDER_SERVER_URL = "https://fractal.jumpnow"
+MENDER_SERVER_URL = "https://<server>"
 
 MENDER_STORAGE_DEVICE = "/dev/mmcblk0"
 IMAGE_ROOTFS_SIZE = "1048576"
