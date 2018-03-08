@@ -1,7 +1,7 @@
-From a2b8f20ea684284f11e5746ac66b34529b74f7a6 Mon Sep 17 00:00:00 2001
+From 1ab5f5be0cff4304e4ff218d444f26bc105ae714 Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sat, 22 Apr 2017 08:54:59 -0400
-Subject: [PATCH 1/5] Revert "mfd: twl6040: The chip does not support bulk
+Subject: [PATCH 1/4] Revert "mfd: twl6040: The chip does not support bulk
  access"
 
 This reverts commit c78cb17867e48a4b74abbc8ffc52ac1ed5d0299d.
@@ -10,10 +10,10 @@ This reverts commit c78cb17867e48a4b74abbc8ffc52ac1ed5d0299d.
  1 file changed, 1 deletion(-)
 
 diff --git a/drivers/mfd/twl6040.c b/drivers/mfd/twl6040.c
-index d66502d..5021ee3 100644
+index dd19f17..656b806 100644
 --- a/drivers/mfd/twl6040.c
 +++ b/drivers/mfd/twl6040.c
-@@ -609,7 +609,6 @@ static const struct regmap_config twl6040_regmap_config = {
+@@ -613,7 +613,6 @@ static const struct regmap_config twl6040_regmap_config = {
  	.writeable_reg = twl6040_writeable_reg,
  
  	.cache_type = REGCACHE_RBTREE,

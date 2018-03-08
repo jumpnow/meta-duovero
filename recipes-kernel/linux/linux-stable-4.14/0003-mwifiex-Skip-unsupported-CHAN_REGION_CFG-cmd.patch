@@ -1,7 +1,7 @@
-From 3cfa34e558904f7740d9465deb2dc9b540659323 Mon Sep 17 00:00:00 2001
+From 5dd70cdc79e1c36fdfd29710abf67df64818a3ad Mon Sep 17 00:00:00 2001
 From: Scott Ellis <scott@jumpnowtek.com>
 Date: Fri, 15 Dec 2017 08:38:28 -0500
-Subject: [PATCH 4/5] mwifiex: Skip unsupported CHAN_REGION_CFG cmd
+Subject: [PATCH 3/4] mwifiex: Skip unsupported CHAN_REGION_CFG cmd
 
 ---
  drivers/net/wireless/marvell/mwifiex/sta_cmd.c | 3 ---
