@@ -2,17 +2,17 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
     branch: rocko
-    commit: 21ba45a
+    commit: f1ff13c
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: rocko
-    commit: a65c1ac
+    commit: dacfa2b
 
 If using mender
 
     URI: git://github.com/mendersoftware/meta-mender
     branch: rocko
-    commit: b1962c3
+    commit: 94ef411
 
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
