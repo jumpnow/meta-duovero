@@ -12,7 +12,7 @@ If using mender
 
     URI: git://github.com/mendersoftware/meta-mender
     branch: rocko
-    commit: 94ef411
+    commit: cb4feea
 
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
