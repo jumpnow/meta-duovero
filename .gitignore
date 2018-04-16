@@ -1,5 +1,6 @@
 *~
 scripts/wpa_supplicant.conf
 scripts/interfaces
+scripts/uEnv.txt
 recipes-mender/mender/files/artifact-verify-key.pem
 recipes-mender/mender/files/server.crt
