@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 2.4 Poky distribution [rocko] branch
+# Yocto Project 2.5 Poky distribution [sumo] branch
 # This is a sysvinit system
 
 BBMASK = "meta-duovero/recipes-mender"
@@ -22,7 +22,7 @@ KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
 #SSTATE_DIR = "/oe9/duo/sstate-cache"
 
-#TMPDIR = "/oe9/duo/tmp-rocko"
+#TMPDIR = "/oe9/duo/tmp-sumo"
 
 DISTRO = "poky"
 
