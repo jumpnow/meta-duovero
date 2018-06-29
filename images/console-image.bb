@@ -14,6 +14,7 @@ CORE_OS = " \
 "
 
 KERNEL_EXTRA_INSTALL = " \
+    hello-mod2 \
     kernel-modules \
 "
 
