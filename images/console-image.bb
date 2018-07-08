@@ -4,11 +4,12 @@ HOMEPAGE = "http://www.jumpnowtek.com"
 IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-us"
 
-inherit core-image
+inherit image
 
 CORE_OS = " \
     busybox-hwclock \
     openssh openssh-keygen openssh-sftp-server \
+    packagegroup-core-boot \
     term-prompt \
     tzdata \
 "
