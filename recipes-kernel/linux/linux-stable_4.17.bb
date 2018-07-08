@@ -1,6 +1,4 @@
-require recipes-kernel/linux/linux-yocto.inc
-
-LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
+require linux-stable.inc
 
 COMPATIBLE_MACHINE = "duovero"
 
