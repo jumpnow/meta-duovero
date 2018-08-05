@@ -2,11 +2,11 @@ This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
     branch: sumo 
-    commit: 96fbd39ba3
+    commit: b8f9048
 
     URI: git://git.openembedded.org/meta-openembedded
     branch: sumo
-    commit: b0950aeff
+    commit: b0950ae
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
