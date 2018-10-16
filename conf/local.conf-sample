@@ -16,6 +16,9 @@ PREFERRED_PROVIDER_udev = "eudev"
 
 MACHINE = "duovero"
 
+# if using root-upgrader package for upgrades
+# SD_UPGRADER_BOOT = "1"
+
 KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
 #DL_DIR = "${HOME}/oe-sources"
