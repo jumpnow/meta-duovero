@@ -59,12 +59,17 @@ sudo cp ${SRCDIR}/MLO-${MACHINE} /media/card/MLO
 echo "Copying u-boot"
 sudo cp ${SRCDIR}/u-boot-${MACHINE}.img /media/card/u-boot.img
 
-if [ -f ${SRCDIR}/uEnv.txt ]; then
-	echo "Copying ${SRCDIR}/uEnv.txt to /media/card"
-	sudo cp ${SRCDIR}/uEnv.txt /media/card
-elif [ -f ./uEnv.txt ]; then
-	echo "Copying ./uEnv.txt to /media/card"
-	sudo cp ./uEnv.txt /media/card
+if [ -f ${SRCDIR}/boot.scr ]; then
+	echo "Copying boot.scr to /media/card"
+	sudo cp ${SRCDIR}/boot.scr /media/card
+else
+	if [ -f ${SRCDIR}/uEnv.txt ]; then
+		echo "Copying ${SRCDIR}/uEnv.txt to /media/card"
+		sudo cp ${SRCDIR}/uEnv.txt /media/card
+	elif [ -f ./uEnv.txt ]; then
+		echo "Copying ./uEnv.txt to /media/card"
+		sudo cp ./uEnv.txt /media/card
+	fi
 fi
 
 echo "Unmounting ${DEV}"
