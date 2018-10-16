@@ -91,5 +91,16 @@ fi
 echo "Unmounting $DEV"
 sudo umount $DEV
 
-echo "Done"
+if [ -b "/dev/${1}5" ]; then
+    DEV=/dev/${1}5
+    echo "Formatting flags partition as FAT: ${DEV}"
+    sudo mkfs.vfat ${DEV}
+fi
 
+if [ -b "/dev/${1}6" ]; then
+    DEV=/dev/${1}6
+    echo "Formatting opt partition as ext4: ${DEV}"
+    sudo mkfs.ext4 -q -F ${DEV}
+fi
+
+echo "Done"
