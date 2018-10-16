@@ -12,6 +12,7 @@ CORE_OS = " \
     packagegroup-core-boot \
     term-prompt \
     tzdata \
+    u-boot-scr \
 "
 
 KERNEL_EXTRA_INSTALL = " \
@@ -38,8 +39,6 @@ DEV_SDK_INSTALL = " \
     g++-symlinks \
     gcc \
     gcc-symlinks \
-    gdb \
-    gdbserver \
     gettext \
     git \
     ldd \
@@ -47,7 +46,6 @@ DEV_SDK_INSTALL = " \
     libstdc++-dev \
     libtool \
     make \
-    perl-modules \
     pkgconfig \
     python-modules \
 "
@@ -56,7 +54,6 @@ DEV_EXTRAS = " \
     ntp \
     ntp-tickadj \
     serialecho \
-    spiloop \
 "
 
 EXTRA_TOOLS_INSTALL = " \
@@ -70,10 +67,9 @@ EXTRA_TOOLS_INSTALL = " \
     iperf3 \
     htop \
     less \
-    memtester \
-    nano \
     netcat \
     procps \
+    root-upgrader \
     sysfsutils \
     tcpdump \
     unzip \
@@ -100,9 +96,14 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+create_opt_dir() {
+    mkdir -p ${IMAGE_ROOTFS}/opt
+}
+
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
     disable_bootlogd ; \
- "
+    create_opt_dir ; \
+"
 
 export IMAGE_BASENAME = "console-image"
