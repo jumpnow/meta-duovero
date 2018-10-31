@@ -66,6 +66,7 @@ EXTRA_TOOLS_INSTALL = " \
     iperf3 \
     less \
     netcat \
+    nmap \
     procps \
     rndaddtoentcnt \
     root-upgrader \
