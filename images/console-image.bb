@@ -23,7 +23,6 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     linux-firmware-sd8787 \
-    wireless-tools \
     wpa-supplicant \
 "
 
@@ -65,10 +64,10 @@ EXTRA_TOOLS_INSTALL = " \
     findutils \
     i2c-tools \
     iperf3 \
-    htop \
     less \
     netcat \
     procps \
+    rndaddtoentcnt \
     root-upgrader \
     sysfsutils \
     tcpdump \
