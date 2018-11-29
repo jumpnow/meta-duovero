@@ -50,8 +50,6 @@ DEV_SDK_INSTALL = " \
 "
 
 DEV_EXTRAS = " \
-    ntp \
-    ntp-tickadj \
     serialecho \
 "
 
@@ -65,8 +63,9 @@ EXTRA_TOOLS_INSTALL = " \
     i2c-tools \
     iperf3 \
     less \
-    netcat \
+    netcat-openbsd \
     nmap \
+    ntp ntp-tickadj \
     procps \
     rndaddtoentcnt \
     root-upgrader \
