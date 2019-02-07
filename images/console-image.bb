@@ -64,6 +64,7 @@ EXTRA_TOOLS_INSTALL = " \
     i2c-tools \
     iperf3 \
     less \
+    lsof \
     netcat-openbsd \
     nmap \
     ntp ntp-tickadj \
