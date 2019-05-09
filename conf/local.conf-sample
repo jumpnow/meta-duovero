@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 2.6 Poky distribution [thud] branch
+# Yocto Project 2.7 Poky distribution [warrior] branch
 # This is a sysvinit system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -17,12 +17,12 @@ MACHINE = "duovero"
 KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
 # if using root-upgrader package for upgrades
-# use mk4parts.sh partitioning script if using upgrader
+# use mk4parts.sh partitioning script
 # SD_UPGRADER_BOOT = "1"
 
 #DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe9/duo/sstate-cache"
-#TMPDIR = "/oe9/duo/tmp-thud"
+#SSTATE_DIR = "/oe6/duo/sstate-cache"
+#TMPDIR = "/oe6/duo/tmp-warrior"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
