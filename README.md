@@ -8,7 +8,7 @@ This layer depends on:
 
 Latest commits:
 
-    poky 1b425a8
+    poky 2e01bc4
     meta-openembedded d7338c2
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
