@@ -19,6 +19,12 @@ KERNEL_EXTRA_INSTALL = " \
     kernel-modules \
 "
 
+WIREGUARD = " \
+    wireguard-init \
+    wireguard-module \
+    wireguard-tools \
+"
+
 WIFI_SUPPORT = " \
     crda \
     iw \
@@ -61,6 +67,7 @@ EXTRA_TOOLS_INSTALL = " \
     dosfstools \
     ethtool \
     findutils \
+    firewall \
     i2c-tools \
     ifupdown \
     iperf3 \
@@ -88,7 +95,8 @@ IMAGE_INSTALL += " \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
     ${WIFI_SUPPORT} \
- "
+    ${WIREGUARD} \
+"
 
 set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
