@@ -1,8 +1,8 @@
 # Local configuration for meta-duovero images
-# Yocto Project 2.7 Poky distribution [warrior] branch
+# Yocto Project 3.0 Poky distribution [zeus] branch
 # This is a sysvinit system
 
-# OE version is broken for 5.1+ kernels
+# use local version 
 BBMASK = "meta-networking/recipes-kernel/wireguard"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -24,8 +24,8 @@ KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 # SD_UPGRADER_BOOT = "1"
 
 #DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe6/duo/sstate-cache"
-#TMPDIR = "/oe6/duo/tmp-warrior"
+#SSTATE_DIR = "/oe8/duo/sstate-cache"
+#TMPDIR = "/oe8/duo/tmp-zeus"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"

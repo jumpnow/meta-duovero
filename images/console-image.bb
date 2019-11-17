@@ -16,7 +16,9 @@ CORE_OS = " \
 "
 
 KERNEL_EXTRA_INSTALL = " \
+    cryptodev-module \
     kernel-modules \
+    load-modules \
 "
 
 WIREGUARD = " \
@@ -25,7 +27,7 @@ WIREGUARD = " \
     wireguard-tools \
 "
 
-WIFI_SUPPORT = " \
+WIFI = " \
     crda \
     iw \
     linux-firmware-sd8787 \
@@ -66,6 +68,7 @@ EXTRA_TOOLS_INSTALL = " \
     devmem2 \
     dosfstools \
     ethtool \
+    file \
     findutils \
     firewall \
     i2c-tools \
@@ -88,13 +91,15 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
 "
 
+SECURITY_TOOLS = " \
+    checksec \
+"
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
-    ${DEV_SDK_INSTALL} \
-    ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${KERNEL_EXTRA_INSTALL} \
-    ${WIFI_SUPPORT} \
+    ${SECURITY_TOOLS} \
     ${WIREGUARD} \
 "
 
@@ -106,6 +111,11 @@ disable_bootlogd() {
     echo BOOTLOGD_ENABLE=no > ${IMAGE_ROOTFS}/etc/default/bootlogd
 }
 
+disable_rng_daemon() {
+    rm -f ${IMAGE_ROOTFS}/etc/rcS.d/S*rng-tools
+    rm -f ${IMAGE_ROOTFS}/etc/rc5.d/S*rng-tools
+}
+
 create_opt_dir() {
     mkdir -p ${IMAGE_ROOTFS}/opt
 }
@@ -113,6 +123,7 @@ create_opt_dir() {
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
     disable_bootlogd ; \
+    disable_rng_daemon ; \
     create_opt_dir ; \
 "
 
