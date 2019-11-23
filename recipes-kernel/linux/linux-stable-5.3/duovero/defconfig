@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm 5.3.9 Kernel Configuration
+# Linux/arm 5.3.12 Kernel Configuration
 #
 
 #
@@ -3570,9 +3570,7 @@ CONFIG_SECTION_MISMATCH_WARN_ONLY=y
 # CONFIG_DEBUG_FORCE_WEAK_PER_CPU is not set
 # end of Compile-time checks and compiler options
 
-CONFIG_MAGIC_SYSRQ=y
-CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x0
-# CONFIG_MAGIC_SYSRQ_SERIAL is not set
+# CONFIG_MAGIC_SYSRQ is not set
 CONFIG_DEBUG_KERNEL=y
 # CONFIG_DEBUG_MISC is not set
 
