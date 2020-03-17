@@ -13,25 +13,16 @@ else
 	exit 1
 fi
 
-if [ "$DRIVE" = "/dev/sda" ] ; then
-	echo "Sorry, not going to format $DRIVE"
-	exit 1
-fi
+mount | grep -q ${1}
 
+if [ $? -ne 1 ]; then
+    echo "Looks like partitions on device /dev/${1} are mounted"
+    echo "Not going to work on a device that is currently in use"
+    mount | grep ${1}
+    exit 1
+fi
 
 echo -e "\nWorking on $DRIVE\n"
-
-#make sure that the SD card isn't mounted before we start
-if [ -b ${DRIVE}1 ]; then
-	umount ${DRIVE}1
-	umount ${DRIVE}2
-elif [ -b ${DRIVE}p1 ]; then
-	umount ${DRIVE}p1
-	umount ${DRIVE}p2
-else
-	umount ${DRIVE}
-fi
-
 
 SIZE=`fdisk -l $DRIVE | grep "Disk $DRIVE" | cut -d' ' -f5`
 

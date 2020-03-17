@@ -14,20 +14,13 @@ else
         exit 1
 fi
 
-if [ "$DEV" = "/dev/sda" ] ; then
-        echo "Sorry, not going to format $DEV"
-        exit 1
-fi
+mount | grep -q ${1}
 
-#make sure that the SD card isn't mounted before we start
-if [ -b ${DEV}1 ]; then
-        umount ${DEV}1
-        umount ${DEV}2
-elif [ -b ${DEV}p1 ]; then
-        umount ${DEV}p1
-        umount ${DEV}p2
-else
-        umount ${DEV}
+if [ $? -ne 1 ]; then
+    echo "Looks like partitions on device /dev/${1} are mounted"
+    echo "Not going to work on a device that is currently in use"
+    mount | grep ${1}
+    exit 1
 fi
 
 # new versions of sfdisk don't use rotating disk params
