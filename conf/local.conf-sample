@@ -2,8 +2,14 @@
 # Yocto Project 3.0 Poky distribution [zeus] branch
 # This is a sysvinit system
 
-# use local version 
+# mask wireguard from meta-openembedded/meta-networking
+# use version in meta-jumpnow to support kernels < 5.6
+# with wireguard-linux-compat
 BBMASK = "meta-networking/recipes-kernel/wireguard"
+
+# mask cryptodev from poky/meta
+# use version from meta-jumpnow to support kernels > 5.4
+BBMASK += "meta/recipes-kernel/cryptodev"
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
@@ -17,13 +23,19 @@ MACHINE = "duovero"
 
 KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
-# if using root-upgrader package for upgrades
-# use mk4parts.sh partitioning script
-# SD_UPGRADER_BOOT = "1"
+# default kernel is 5.6, uncomment to change
+# PREFERRED_VERSION_linux-stable = "5.4.%"
 
-#DL_DIR = "${HOME}/oe-sources"
-#SSTATE_DIR = "/oe8/duo/sstate-cache"
-#TMPDIR = "/oe8/duo/tmp-zeus"
+# uncomment for kernels < 5.6
+# WIREGUARD_COMPAT = "1"
+
+# if using root-upgrader package for upgrades
+# (use mk4parts.sh for SD card partitioning script)
+SD_UPGRADER_BOOT = "1"
+
+# DL_DIR = "/src/oe"
+# SSTATE_DIR = "/oe6/duo/sstate-cache"
+# TMPDIR = "/oe6/duo/tmp-zeus"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -32,7 +44,7 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root password
-#EXTRA_IMAGE_FEATURES = "debug-tweaks"
+# EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # set a root password
 INHERIT += "extrausers"
