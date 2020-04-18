@@ -15,6 +15,8 @@ IMAGE_INSTALL += " \
     serialecho \
     root-upgrader \
     u-boot-scr \
+    ${SECURITY_TOOLS} \
+    ${WIREGUARD} \
 "
 
 export IMAGE_BASENAME = "console-image"
