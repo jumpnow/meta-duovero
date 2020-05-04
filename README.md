@@ -1,27 +1,25 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: zeus
+    branch: dunfell
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: zeus
+    branch: dunfell
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: zeus
+    branch: dunfell
 
     URI: https://github.com/jumpnow/meta-jumpnow.git
-    branch: zeus
+    branch: dunfell
 
 Latest commits:
 
-    poky 74f229160c
-    meta-openembedded 9e60d3066
-    meta-security ecd8c30
-    meta-jumpnow 5dc82a5
-
+    poky 5e44568d90
+    meta-openembedded 679bb4912
+    meta-security f1ca0f9
+    meta-jumpnow ecff31c
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
-
 
 Note: wifi broke again somewhere between 4.19 and 5.0.
       The firmware is not loading (again). I currently have
