@@ -12,8 +12,9 @@ WIFI = " \
 "
 
 IMAGE_INSTALL += " \
-    serialecho \
+    firewall \
     root-upgrader \
+    serialecho \
     u-boot-scr \
     ${SECURITY_TOOLS} \
     ${WIREGUARD} \
