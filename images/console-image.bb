@@ -12,6 +12,7 @@ WIFI = " \
 "
 
 IMAGE_INSTALL += " \
+    firewall \
     serialecho \
     root-upgrader \
     u-boot-scr \
