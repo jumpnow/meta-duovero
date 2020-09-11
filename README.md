@@ -14,10 +14,10 @@ This layer depends on:
 
 Latest commits:
 
-    poky 35cc7fef84
+    poky 87c9d29635
     meta-openembedded d7b41ced4
     meta-security ef4bfb5
-    meta-jumpnow 96f10cc
+    meta-jumpnow 769783e
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
