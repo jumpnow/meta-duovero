@@ -17,7 +17,7 @@ Latest commits:
     poky 012ad10a89
     meta-openembedded 144077083
     meta-security d4ec0d8
-    meta-jumpnow f7fba93
+    meta-jumpnow 71c3338
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 
