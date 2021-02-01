@@ -1,23 +1,23 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: dunfell
+    branch: gatesgarth 
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: dunfell
+    branch: gatesgarth
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: dunfell
+    branch: gatesgarth
 
     URI: https://github.com/jumpnow/meta-jumpnow.git
-    branch: dunfell
+    branch: gatesgarth
 
 Latest commits:
 
-    poky 7ea41de137
-    meta-openembedded 5bba79488
-    meta-security c74cc97
-    meta-jumpnow b399563
+    poky 9de9e2e319 
+    meta-openembedded 6ff4bd4f3 
+    meta-security 4583ab9 
+    meta-jumpnow 3dd7b9a
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 

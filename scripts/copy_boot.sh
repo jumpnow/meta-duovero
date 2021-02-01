@@ -22,26 +22,33 @@ if [ ! -d /media/card ]; then
 fi
 
 if [ -z "$OETMP" ]; then
-    echo "Working from local directory"
-    SRCDIR=.
-else
-    echo "OETMP: $OETMP"
+   # echo try to find it
+    if [ -f ../../build/conf/local.conf ]; then
+        OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
 
-    if [ ! -d ${OETMP}/deploy/images/${MACHINE} ]; then
-        echo "Directory not found: ${OETMP}/deploy/images/${MACHINE}"
-        exit 1
+        if [ -z "$OETMP" ]; then
+            OETMP=../../build/tmp
+        fi
     fi
-
-    SRCDIR=${OETMP}/deploy/images/${MACHINE}
 fi
 
-if [ ! -f ${SRCDIR}/MLO-${MACHINE} ]; then
-    echo "File not found: ${SRCDIR}/MLO-${MACHINE}"
+
+echo "OETMP: $OETMP"
+
+if [ ! -d ${OETMP}/deploy/images/${MACHINE} ]; then
+    echo "Directory not found: ${OETMP}/deploy/images/${MACHINE}"
     exit 1
 fi
 
-if [ ! -f ${SRCDIR}/u-boot-${MACHINE}.img ]; then
-    echo "File not found: ${SRCDIR}/u-boot-${MACHINE}.img"
+SRC=${OETMP}/deploy/images/${MACHINE}
+
+if [ ! -f ${SRC}/MLO-${MACHINE} ]; then
+    echo "File not found: ${SRC}/MLO-${MACHINE}"
+    exit 1
+fi
+
+if [ ! -f ${SRC}/u-boot-${MACHINE}.img ]; then
+    echo "File not found: ${SRC}/u-boot-${MACHINE}.img"
     exit 1
 fi
 
@@ -63,18 +70,18 @@ echo "Mounting $DEV"
 sudo mount ${DEV} /media/card
 
 echo "Copying MLO"
-sudo cp ${SRCDIR}/MLO-${MACHINE} /media/card/MLO
+sudo cp ${SRC}/MLO-${MACHINE} /media/card/MLO
 
 echo "Copying u-boot"
-sudo cp ${SRCDIR}/u-boot-${MACHINE}.img /media/card/u-boot.img
+sudo cp ${SRC}/u-boot-${MACHINE}.img /media/card/u-boot.img
 
-if [ -f ${SRCDIR}/boot.scr ]; then
+if [ -f ${SRC}/boot.scr ]; then
     echo "Copying boot.scr to /media/card"
-    sudo cp ${SRCDIR}/boot.scr /media/card
+    sudo cp ${SRC}/boot.scr /media/card
 else
-    if [ -f ${SRCDIR}/uEnv.txt ]; then
-        echo "Copying ${SRCDIR}/uEnv.txt to /media/card"
-        sudo cp ${SRCDIR}/uEnv.txt /media/card
+    if [ -f ${SRC}/uEnv.txt ]; then
+        echo "Copying ${SRC}/uEnv.txt to /media/card"
+        sudo cp ${SRC}/uEnv.txt /media/card
     elif [ -f ./uEnv.txt ]; then
         echo "Copying ./uEnv.txt to /media/card"
         sudo cp ./uEnv.txt /media/card

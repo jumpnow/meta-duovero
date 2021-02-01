@@ -12,12 +12,9 @@ WIFI = " \
 "
 
 IMAGE_INSTALL += " \
-    firewall \
     root-upgrader \
     serialecho \
     u-boot-scr \
-    ${SECURITY_TOOLS} \
-    ${WIREGUARD} \
 "
 
 export IMAGE_BASENAME = "console-image"

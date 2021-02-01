@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 3.1 Poky distribution [dunfell] branch
+# Yocto Project 3.2 Poky distribution [gatesgarth] branch
 # This is a sysvinit system
 
 # mask wireguard from meta-openembedded/meta-networking
@@ -19,7 +19,7 @@ MACHINE = "duovero"
 
 KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
-# default kernel is 5.6, uncomment to change
+# default kernel is 5.10, uncomment to change
 # PREFERRED_VERSION_linux-stable = "5.4.%"
 
 # uncomment for kernels < 5.6
@@ -31,7 +31,7 @@ SD_UPGRADER_BOOT = "1"
 
 # DL_DIR = "/src/oe"
 # SSTATE_DIR = "/oe6/duo/sstate-cache"
-# TMPDIR = "/oe6/duo/tmp-dunfell"
+# TMPDIR = "/oe6/duo/tmp-gatesgarth"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
