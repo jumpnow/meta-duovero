@@ -88,6 +88,8 @@ else
     fi
 fi
 
+sudo sync
+
 echo "Unmounting ${DEV}"
 sudo umount ${DEV}
 

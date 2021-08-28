@@ -1,54 +1,41 @@
 # Local configuration for meta-duovero images
-# Yocto Project 3.2 Poky distribution [gatesgarth] branch
-# This is a sysvinit system
-
-# mask wireguard from meta-openembedded/meta-networking
-# use version in meta-jumpnow to support kernels < 5.6
-# with wireguard-linux-compat
-BBMASK = "meta-networking/recipes-kernel/wireguard"
+# Yocto Project 3.3 Poky distribution [hardknott] branch
+# This is a systemd system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
 
-DISTRO_FEATURES = "ext2 usbhost ${DISTRO_FEATURES_LIBC}"
+# use local layer u-boot version
+BBMASK = "meta/recipes-bsp/u-boot/"
 
-PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
-PREFERRED_PROVIDER_udev = "eudev"
+DISTRO_FEATURES_BACKFILL_CONSIDERED = "pulseaudio sysvinit"
+
+DISTRO_FEATURES_remove = "ptest"
+
+INIT_MANAGER = "systemd"
 
 MACHINE = "duovero"
 
-KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
-
-# default kernel is 5.10, uncomment to change
-# PREFERRED_VERSION_linux-stable = "5.4.%"
-
-# uncomment for kernels < 5.6
-# WIREGUARD_COMPAT = "1"
-
-# if using root-upgrader package for upgrades
-# (use mk4parts.sh for SD card partitioning script)
-SD_UPGRADER_BOOT = "1"
-
-# DL_DIR = "/src/oe"
-# SSTATE_DIR = "/oe6/duo/sstate-cache"
-# TMPDIR = "/oe6/duo/tmp-gatesgarth"
+#DL_DIR = "/src/hardknott"
+#SSTATE_DIR = "/oe5/duo/sstate-cache"
+#TMPDIR = "/oe5/duo/tmp-hardknott"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
 
-# i686 or x86_64
 SDKMACHINE = "x86_64"
 
 # for no root password
-# EXTRA_IMAGE_FEATURES = "debug-tweaks"
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # set a root password
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
+#INHERIT += "extrausers"
+#EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # force password change on first login
-INHERIT += "chageusers"
-CHAGE_USERS_PARAMS = "chage -d0 root; "
+#INHERIT += "chageusers"
+#CHAGE_USERS_PARAMS = "chage -d0 root; "
 
 USER_CLASSES = "image-mklibs image-prelink"
 
