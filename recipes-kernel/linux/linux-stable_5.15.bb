@@ -6,17 +6,17 @@ KERNEL_CONFIG_COMMAND = "oe_runmake_call -C ${S} CC="${KERNEL_CC}" O=${B} olddef
 
 COMPATIBLE_MACHINE = "duovero"
 
-KERNEL_DEVICETREE ?= "omap4-duovero-parlor.dtb"
+KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
-LINUX_VERSION = "5.10"
+LINUX_VERSION = "5.15"
 LINUX_VERSION_EXTENSION = "-jumpnow"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/linux-stable-${LINUX_VERSION}:"
 
 S = "${WORKDIR}/git"
 
-PV = "5.10.80"
-SRCREV = "f884bb85b8d877d4e0c670403754813a7901705b"
+PV = "5.15.3"
+SRCREV = "3b17187f5ca1f5d0c641fdc90a6a7e38afdf8fae"
 SRC_URI = " \
     git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=linux-${LINUX_VERSION}.y \
     file://defconfig \

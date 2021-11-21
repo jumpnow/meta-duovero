@@ -1,19 +1,19 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: hardknott 
+    branch: honister 
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: hardknott
+    branch: honister
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: hardknott
+    branch: honister
 
 Latest commits:
 
-    poky b89bb2651d
-    meta-openembedded d323115ec
-    meta-security 5050d12
+    poky da5d1b540e
+    meta-openembedded ad52a41de
+    meta-security fb77606
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
 

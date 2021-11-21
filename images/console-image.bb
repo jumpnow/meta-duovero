@@ -1,4 +1,4 @@
-SUMMARY = "A console development image for the duovero"
+SUMMARY = "A console development image for the overo"
 HOMEPAGE = "http://www.jumpnowtek.com"
 
 IMAGE_FEATURES += "package-management"
@@ -27,6 +27,7 @@ DEV_SDK = " \
     file \
     gcc \
     gcc-symlinks \
+    gdb \
     g++ \
     g++-symlinks \
     gettext \
@@ -49,7 +50,6 @@ EXTRA_TOOLS = " \
     dosfstools \
     e2fsprogs-mke2fs \
     ethtool \
-    fbset \
     findutils \
     grep \
     i2c-tools \
@@ -59,6 +59,7 @@ EXTRA_TOOLS = " \
     iptables \
     less \
     lsof \
+    nano \
     netcat-openbsd \
     ntp ntp-tickadj \
     parted \
@@ -68,6 +69,7 @@ EXTRA_TOOLS = " \
     util-linux \
     util-linux-blkid \
     unzip \
+    vim \
     wget \
     zip \
 "

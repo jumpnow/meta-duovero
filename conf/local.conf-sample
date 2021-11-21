@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 3.3 Poky distribution [hardknott] branch
+# Yocto Project 3.4 Poky distribution [honister] branch
 # This is a systemd system
 
 LICENSE_FLAGS_WHITELIST = "commercial"
@@ -7,19 +7,22 @@ LICENSE_FLAGS_WHITELIST = "commercial"
 # use local layer u-boot version
 BBMASK = "meta/recipes-bsp/u-boot/"
 
-DISTRO_FEATURES = "ext2 systemd usbhost ${DISTRO_FEATURES_LIBC}"
+DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "pulseaudio sysvinit"
 
-DISTRO_FEATURES_remove = "ptest"
+DISTRO_FEATURES:remove = "ptest"
 
 INIT_MANAGER = "systemd"
 
 MACHINE = "duovero"
 
-#DL_DIR = "/src/hardknott"
-#SSTATE_DIR = "/oe5/duo/sstate-cache"
-#TMPDIR = "/oe5/duo/tmp-hardknott"
+# default kernel is 5.15
+# PREFERRED_VERSION_linux-stable = "5.10.%"
+
+#DL_DIR = "/src/honister"
+#SSTATE_DIR = "/oe8/duo/sstate-cache"
+#TMPDIR = "/oe8/duo/tmp-honister"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -27,19 +30,19 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root password
-EXTRA_IMAGE_FEATURES = "debug-tweaks"
+# EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # set a root password
-#INHERIT += "extrausers"
-#EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 
 # force password change on first login
-#INHERIT += "chageusers"
-#CHAGE_USERS_PARAMS = "chage -d0 root; "
+INHERIT += "chageusers"
+CHAGE_USERS_PARAMS = "chage -d0 root; "
 
-USER_CLASSES = "image-mklibs image-prelink"
+USER_CLASSES = "image-prelink"
 
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"
 INHERIT += "rm_work"
-CONF_VERSION = "1"
+CONF_VERSION = "2"
