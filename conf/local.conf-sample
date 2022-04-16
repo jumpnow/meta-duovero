@@ -17,8 +17,8 @@ INIT_MANAGER = "systemd"
 
 MACHINE = "duovero"
 
-# default kernel is 5.15
-# PREFERRED_VERSION_linux-stable = "5.10.%"
+# kernel is 5.17 available
+PREFERRED_VERSION_linux-stable = "5.15.%"
 
 #DL_DIR = "/src/honister"
 #SSTATE_DIR = "/oe8/duo/sstate-cache"
