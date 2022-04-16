@@ -9,7 +9,6 @@ COMPATIBLE_MACHINE = "duovero"
 KERNEL_DEVICETREE = "omap4-duovero-parlor.dtb"
 
 LINUX_VERSION = "5.15"
-LINUX_VERSION_EXTENSION = "-jumpnow"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/linux-stable-${LINUX_VERSION}:"
 
