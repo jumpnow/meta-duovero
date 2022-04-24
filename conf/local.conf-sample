@@ -1,11 +1,8 @@
 # Local configuration for meta-duovero images
-# Yocto Project 3.4 Poky distribution [honister] branch
+# Yocto Project 4.0 Poky distribution [kirkstone] branch
 # This is a systemd system
 
-LICENSE_FLAGS_WHITELIST = "commercial"
-
-# use local layer u-boot version
-BBMASK = "meta/recipes-bsp/u-boot/"
+LICENSE_FLAGS_ACCEPTED = "commercial"
 
 DISTRO_FEATURES = "ext2 security systemd usbhost ${DISTRO_FEATURES_LIBC}"
 
@@ -20,9 +17,9 @@ MACHINE = "duovero"
 # kernel is 5.17 available
 PREFERRED_VERSION_linux-stable = "5.15.%"
 
-#DL_DIR = "/src/honister"
-#SSTATE_DIR = "/oe8/duo/sstate-cache"
-#TMPDIR = "/oe8/duo/tmp-honister"
+#DL_DIR = "/oe/dl/kirkstone"
+#SSTATE_DIR = "/oe/duo/sstate-cache"
+#TMPDIR = "/oe/duo/tmp-kirkstone"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -39,8 +36,6 @@ EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
 # force password change on first login
 INHERIT += "chageusers"
 CHAGE_USERS_PARAMS = "chage -d0 root; "
-
-USER_CLASSES = "image-prelink"
 
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"
