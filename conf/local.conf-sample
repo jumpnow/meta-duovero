@@ -19,7 +19,7 @@ PREFERRED_VERSION_linux-stable = "5.15.%"
 
 #DL_DIR = "/oe/dl/kirkstone"
 #SSTATE_DIR = "/oe/duo/sstate-cache"
-#TMPDIR = "/oe/duo/tmp-kirkstone"
+#TMPDIR = "/oe/duo/tmp"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
