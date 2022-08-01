@@ -32,7 +32,6 @@ EXTRA_TOOLS = " \
     iptables \
     less \
     lsof \
-    nano \
     netcat-openbsd \
     parted \
     procps \
