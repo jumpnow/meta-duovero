@@ -54,11 +54,6 @@ if [ ! -f "${src}/u-boot-${MACHINE}.img" ]; then
     exit 1
 fi
 
-if [ ! -f "${src}/boot.scr" ]; then
-    echo "File not found: ${src}/boot.scr"
-    exit 1
-fi
-
 if [ -b "$1" ]; then
     dev="$1"
 elif [ -b "/dev/${1}1" ]; then
@@ -81,9 +76,6 @@ sudo cp "${src}/MLO-${MACHINE}" "${mnt}/MLO"
 
 echo "Copying u-boot"
 sudo cp "${src}/u-boot-${MACHINE}.img" "${mnt}/u-boot.img"
-
-echo "Copying boot.scr to ${mnt}/boot.scr"
-sudo cp "${src}/boot.scr" "${mnt}/boot.scr" 
 
 sudo sync
 
