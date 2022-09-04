@@ -1,0 +1,68 @@
+From 81538617d479ac3cb286739f5243af639b1a474b Mon Sep 17 00:00:00 2001
+From: Scott Ellis <scott@jumpnowtek.com>
+Date: Sun, 4 Sep 2022 10:49:13 -0400
+Subject: [PATCH] Hardcode bootcmd for sd card
+
+---
+ include/configs/ti_omap4_common.h | 36 ++++++-------------------------
+ 1 file changed, 6 insertions(+), 30 deletions(-)
+
+diff --git a/include/configs/ti_omap4_common.h b/include/configs/ti_omap4_common.h
+index 1e316227aa..8a1cdb374b 100644
+--- a/include/configs/ti_omap4_common.h
++++ b/include/configs/ti_omap4_common.h
+@@ -73,45 +73,21 @@
+ 	#devtypel #instance " "
+ 
+ #define BOOT_TARGET_DEVICES(func) \
+-	func(MMC, mmc, 0) \
+-	func(LEGACY_MMC, legacy_mmc, 0) \
+-	func(MMC, mmc, 1) \
+-	func(LEGACY_MMC, legacy_mmc, 1) \
+-	func(PXE, pxe, na) \
+-	func(DHCP, dhcp, na)
++	func(MMC, mmc, 0)
+ 
+ #include <config_distro_bootcmd.h>
+ #include <environment/ti/mmc.h>
+ 
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+ 	DEFAULT_LINUX_BOOT_ENV \
+-	DEFAULT_MMC_TI_ARGS \
+-	DEFAULT_FIT_TI_ARGS \
+ 	"console=ttyO2,115200n8\0" \
+-	"fdtfile=undefined\0" \
++	"fdtfile=omap4-duovero-parlor.dtb\0" \
+ 	"bootpart=0:2\0" \
+ 	"bootdir=/boot\0" \
+-	"bootfile=zImage\0" \
+-	"usbtty=cdc_acm\0" \
+-	"vram=16M\0" \
+-	"loaduimage=load mmc ${mmcdev} ${loadaddr} uImage\0" \
+-	"uimageboot=echo Booting from mmc${mmcdev} ...; " \
+-		"run args_mmc; " \
+-		"bootm ${loadaddr}\0" \
+-	"findfdt="\
+-		"if test $board_name = sdp4430; then " \
+-			"setenv fdtfile omap4-sdp.dtb; fi; " \
+-		"if test $board_name = panda; then " \
+-			"setenv fdtfile omap4-panda.dtb; fi;" \
+-		"if test $board_name = panda-a4; then " \
+-			"setenv fdtfile omap4-panda-a4.dtb; fi;" \
+-		"if test $board_name = panda-es; then " \
+-			"setenv fdtfile omap4-panda-es.dtb; fi;" \
+-		"if test $board_name = duovero; then " \
+-			"setenv fdtfile omap4-duovero-parlor.dtb; fi;" \
+-		"if test $fdtfile = undefined; then " \
+-			"echo WARNING: Could not determine device tree to use; fi; \0" \
+-	BOOTENV
++	"loadfdt=load mmc ${bootpart} ${fdtaddr} ${bootdir}/${fdtfile}\0" \
++	"loadkernel=load mmc ${bootpart} ${loadaddr} ${bootdir}/zImage\0" \
++	"bootargs=console=ttyO2,115200n8 root=/dev/mmcblk0p2 ro rootfstype=ext4 rootwait\0" \
++	"bootcmd=mmc dev 0; run loadkernel; run loadfdt; bootz ${loadaddr} - ${fdtaddr}\0"
+ 
+ /*
+  * Defines for SPL
+-- 
+2.25.1
+
