@@ -19,10 +19,13 @@ KERNEL_EXTRA = " \
 EXTRA_TOOLS = " \
     bzip2 \
     chrony \
+    coreutils \
     curl \
+    diffutils \
     dosfstools \
     e2fsprogs-mke2fs \
     ethtool \
+    file \
     findutils \
     grep \
     i2c-tools \
