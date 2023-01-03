@@ -1,5 +1,5 @@
 # Local configuration for meta-duovero images
-# Yocto Project 4.0 Poky distribution [kirkstone] branch
+# Yocto Project 4.1 Poky distribution [langdale] branch
 # This is a systemd system
 
 LICENSE_FLAGS_ACCEPTED = "commercial"
@@ -14,12 +14,9 @@ INIT_MANAGER = "systemd"
 
 MACHINE = "duovero"
 
-# kernel is 5.17 available
-PREFERRED_VERSION_linux-stable = "5.15.%"
-
-#DL_DIR = "/oe/dl/kirkstone"
-#SSTATE_DIR = "/oe/duo/sstate-cache"
-#TMPDIR = "/oe/duo/tmp"
+#DL_DIR = "/src/langdale"
+#SSTATE_DIR = "/oe2/duo/sstate-cache"
+#TMPDIR = "/oe2/duo/tmp"
 
 DISTRO = "poky"
 PACKAGE_CLASSES = "package_ipk"
@@ -27,15 +24,7 @@ PACKAGE_CLASSES = "package_ipk"
 SDKMACHINE = "x86_64"
 
 # for no root password
-# EXTRA_IMAGE_FEATURES = "debug-tweaks"
-
-# set a root password
-INHERIT += "extrausers"
-EXTRA_USERS_PARAMS = "usermod -P jumpnowtek root; "
-
-# force password change on first login
-INHERIT += "chageusers"
-CHAGE_USERS_PARAMS = "chage -d0 root; "
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 PATCHRESOLVE = "noop"
 RM_OLD_IMAGE = "1"

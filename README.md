@@ -1,23 +1,18 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: kirkstone 
+    branch: langdale
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: kirkstone
+    branch: langdale
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: kirkstone
+    branch: langdale
 
 Latest commits:
 
-    poky 2f4691f403
-    meta-openembedded a8055484f
-    meta-security c79262a
+    poky b50f718e4c
+    meta-openembedded c354f9277
+    meta-security 2aa48e6
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
-
-Note: wifi broke again somewhere between 4.19 and 5.0.
-      The firmware is not loading (again). I currently have
-      no incentive to fix as my Duovero projects only need
-      ethernet.
