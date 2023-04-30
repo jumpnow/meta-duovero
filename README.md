@@ -1,18 +1,18 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: langdale
+    branch: mickledore
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: langdale
+    branch: mickledore
 
     URI: git://git.yoctoproject.org/meta-security.git
-    branch: langdale
+    branch: mickledore
 
 Latest commits:
 
-    poky 3e95f268ce
-    meta-openembedded 3d1ec70ed
-    meta-security d10f6f9
+    poky 878271e1a1
+    meta-openembedded 2d89a469e
+    meta-security 53c5cc7
 
 meta-duovero layer maintainer: Scott Ellis <scott@jumpnowtek.com>
