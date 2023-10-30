@@ -11,7 +11,6 @@ DEV_SDK = " \
     elfutils elfutils-binutils \
     gcc \
     gcc-symlinks \
-    gdb \
     g++ \
     g++-symlinks \
     gettext \
@@ -20,12 +19,9 @@ DEV_SDK = " \
     libstdc++ \
     libstdc++-dev \
     libtool \
-    ltrace \
     make \
-    perl-modules \
     pkgconfig \
     python3-modules \
-    strace \
 "
 
 IMAGE_INSTALL += " \
