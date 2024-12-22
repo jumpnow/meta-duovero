@@ -3,6 +3,9 @@ From: Scott Ellis <scott@jumpnowtek.com>
 Date: Sun, 4 Sep 2022 10:49:13 -0400
 Subject: [PATCH] Hardcode bootcmd for sd card
 
+Upstream-Status: Inactive-Upstream
+
+Signed-off-by: Scott Ellis <7b2da198@proton.me>
 ---
  include/configs/ti_omap4_common.h | 36 ++++++-------------------------
  1 file changed, 6 insertions(+), 30 deletions(-)
