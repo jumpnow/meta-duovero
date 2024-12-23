@@ -13,11 +13,13 @@ SRC_URI = "\
     file://upgrader-boot.cmd \
 "
 
+S = "${UNPACKDIR}"
+
 do_compile() {
     if [ -n "${SD_UPGRADER_BOOT}" ]; then
-        mkimage -A arm -T script -C none -n "Boot script" -d "${WORKDIR}/upgrader-boot.cmd" boot.scr
+        mkimage -A arm -T script -C none -n "Boot script" -d "${S}/upgrader-boot.cmd" boot.scr
     else
-        mkimage -A arm -T script -C none -n "Boot script" -d "${WORKDIR}/boot.cmd" boot.scr
+        mkimage -A arm -T script -C none -n "Boot script" -d "${S}/boot.cmd" boot.scr
     fi
 }
 
